@@ -1,0 +1,109 @@
+/* main style sheet
+WebDevs BP1
+Thomas Kool
+*/
+html, body, div{
+    margin: 0px;
+    padding: 0px;
+}
+#container{
+    text-align: center;
+}
+#header{
+
+}
+#logo{
+    width: 80%;
+    float: left;
+    height: 50px;
+}
+.logo{
+    height: 65px;
+    width: 80%;
+    float: left;
+}
+#login{
+    width: 20%;
+    float: right;
+}
+#kop{
+
+}
+#page{
+    float:left;
+    width: 90%;
+    height: 600px;
+    line-height: 600px;
+
+}
+#content{
+    text-align: left;
+    vertical-align: text-top;
+    padding: 0px;
+    margin:0px;
+}
+table{
+    vertical-align: text-top;
+}
+#advert{
+    float:left;
+    width: 10%;
+    height: 600px;
+    line-height: 600px;
+
+}
+#footer{
+    clear:both;
+
+}
+.clearfix{
+    clear:both;
+}
+
+/* menu */
+#menu{
+    clear:both;
+
+}
+#menu ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+#menu li{
+    padding: 0px;
+}
+.menuItem{
+    width: 20%;
+    float: left;
+}
+.menuItem:hover{
+    background-color: #0af;
+}
+.subMenu{
+    display:none;
+}
+.menuItem:hover .subMenu{
+    display: block;
+    position: absolute;
+    width: 20%;
+}
+.subOptie a {
+    display: block;
+    background-color: #0aa;
+}
+.subMenu a:hover{
+    background-color: #0fa;
+}
+
+
+/* dev kleuren */
+#container {background-color: red;}
+#header {background-color: green;}
+#content {background-color: yellow;}
+#footer {background-color: blue;}
+#kop {background-color: #af0;}
+#menu {background-color: #afa;}
+#page {background-color: #fa0;}
+#advert {background-color: #f0a;}
+#bottom {background-color: #aff;}

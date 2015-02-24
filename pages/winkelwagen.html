@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+Made by: Thomas Kool & Max Groenendijk
+Beroepsproduct 1, HTML & CSS
+2015
+-->
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Het Drankorgel - Winkelwagen</title>
+    <!-- stylesheets -->
+    <link type="text/css" rel="stylesheet" href="../CSS/mainStyle3.css" />
+    <link type="text/css" rel="stylesheet" href="../CSS/menu.css" />
+    <!-- end stylesheets -->
+</head>
+<body>
+<div id="wrap">
+    <!-- header -->
+    <div id="header">
+        <!-- logo -->
+        <a href="../index.html" title="Home">
+            <div id="logo">
+
+            </div>
+        </a>
+        <!-- end logo -->
+        <!-- login -->
+        <div id="login">
+            <form>
+                <h3>Log in</h3>
+                <table>
+                    <tr>
+                        <td>Gebruikersnaam</td>
+                        <td>Wachtwoord</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="username" title="username" placeholder="Gebruikersnaam" /> </td>
+                        <td><input type="password" name="password" title="password" placeholder="Wachtwoord" /></td>
+                    </tr>
+                </table>
+                <input type="checkbox" name="remember" title="remember" /> Onthouden
+                <a href="#" title="vergeten?" >vergeten?</a> <a href="../pages/registreren.html" title="Registreer">Registreer</a>
+                <input type="button" title="log on" name="Log on" value="Log in" />
+            </form>
+        </div>
+        <!-- end login -->
+
+    </div>
+    <div class="clear">
+
+    </div>
+
+    <!-- start nav -->
+    <div id="nav">
+        <!-- menu content -->
+        <ul>
+            <li><a href="../index.html" title="Nieuws">Nieuws</a></li>
+            <li><a href="acties.html" title="Acties">Acties</a> </li>
+            <li><a href="over%20ons.html" title="Over ons">Over&nbsp;ons</a></li>
+            <li><a href="vacatures.html" title="Vacatures">Vacatures</a></li>
+            <li>Webshop
+                <ul>
+                    <li><a href="producten.html" title="Producten">Producten</a></li>
+                    <li><a href="winkelwagen.html" title="Winkelwagen">Winkelwagen</a></li>
+                    <li><a href="afrekenen.html" title="Afrekenen">Afrekenen</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- end menu content -->
+    </div>
+    <!-- end nav -->
+    <div id="content">
+        <div id="pageContent">
+
+            <!-- insert content -->
+
+            <h1>Winkelwagen</h1>
+            <table class="winkelwagen">
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Productnaam</th>
+                    <th>Prijs</th>
+                    <th>Aantal</th>
+                    <th>Subtotaal</th>
+                    <th>Verwijderen</th>
+                </tr>
+                <tr>
+                    <td><img src="../media/producten/jack_daniels_tennessee_70.png" class="imgPreview" alt="Jack" height="250" /> </td>
+                    <td>Jack Daniel's Tennessee</td>
+                    <td>&euro; 24,99</td>
+                    <td><input type="number" min="0" value="2" name="aantal" /> </td>
+                    <td>&euro; 49,98 </td>
+                    <td><input type="button" value="Verwijder" name="delete" /> </td>
+                </tr>
+                <tr>
+                    <td><img src="../media/producten/jack_daniels_tennessee_70.png" class="imgPreview" alt="Jack" height="250" /> </td>
+                    <td>Jack Daniel's Tennessee</td>
+                    <td>&euro; 24,99</td>
+                    <td><input type="number" min="0" value="2" name="aantal" /> </td>
+                    <td>&euro; 49,98 </td>
+                    <td><input type="button" value="Verwijder" name="delete" /> </td>
+                </tr>
+                <tr>
+                    <td>&nbsp; </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp; </td>
+                    <td>&euro; 99,96 </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+
+
+            <!-- end content -->
+
+
+            </div>
+            <div id="ad">
+                <img src="../media/logo%20Het%20Drankorgel-site%20barV2.png" alt="Logo" />
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+

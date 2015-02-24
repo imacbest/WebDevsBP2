@@ -1,0 +1,160 @@
+/*
+Made by: Thomas Kool & Max Groenendijk
+Beroepsproduct 1, HTML & CSS
+2015
+*/
+
+html, body {
+    margin: 0px;
+    box-sizing: border-box;
+}
+#wrap{
+    height: 100%;
+    width: 100%;
+}
+#header{
+    position: relative;
+    height: 200px;
+    width: 90%;
+    margin: 5px auto 15px auto;
+}
+#logo{
+    float: left;
+    width: 65%;
+    height: 200px;
+    background-image: url("../media/logo%20Het%20DrankorgelV4.png");
+    background-repeat: no-repeat;
+    background-size: 100% 200px;
+}
+#logo img{
+    width: 100%;
+    height: 100%;
+}
+
+#login{
+    float: right;
+    width: 30%;
+    min-width: 250px;
+    height: 200px;
+    padding:5px;
+    box-sizing: border-box;
+}
+#menu{
+    width: 100%;
+    box-sizing: border-box;
+}
+#content {
+    position: relative;
+    width: 85%;
+    margin-top: 15px;
+    margin-left: 10%;
+
+}
+#pageContent{
+    float: left;
+    width: 75%;
+    height: 600px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+#ad{
+    width: 15%;
+    height: auto;
+    right: 0px;
+    position: absolute;
+}
+#ad img{
+    right: 0px;
+    width: 200px;
+    height: auto;
+}
+#logo img{
+    width: auto;
+    height: 150px;
+}
+.clear{
+    float: none;
+    clear: both;
+}
+h1{
+    text-align: center;
+}
+table, th, td, tr{
+    vertical-align: text-top;
+}
+.tableBorder{
+    border: black 1px solid;
+    border-spacing: 0px;
+}
+.imgRight{
+    float:right;
+    padding-left: 10px;
+    border:0;
+}
+.imgLeft{
+    float:left;
+    padding-right: 10px;
+}
+p{
+    width: 100%;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.winkelwagen, .winkelwagen tr {
+    width: 100%;
+    border: black 1px solid;
+}
+.winkelwagen td{
+    width: 15%;
+    border: black 1px solid;
+}
+.productenTabel table, .productenTabel tr,.productenTabel td{
+    border: black 1px solid;
+    border-spacing: 0px;
+    text-align: center;
+}
+.productenTabel td {
+    height: 225px;
+    width: 250px;
+}
+.previewContainer{
+    height: 250px;
+    width: 125px;
+}
+
+input[type="text"], input[type="password"] {
+    border-radius: 10px;
+    padding: 2px;
+    padding-left:5px;
+}
+input:focus{
+    outline: 0;
+}
+.subMenu{
+    float: left;
+    box-sizing: border-box;
+    left:0px;
+    border: 1px black solid;
+    padding: 5px;
+    margin-top: 0px;
+}
+a{
+    color:#666666;
+}
+#producten{
+    width: 80%;
+    float: right;
+}
+.product{
+    width: 150px;
+    border: 2px black solid;
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 2px;
+    height: 250px;
+    vertical-align: bottom;
+    text-align: center;
+    box-sizing: border-box;
+}
