@@ -5,7 +5,6 @@
  * Date: 24-2-2015
  * Time: 9:48
  */
-require('databaseConnection.php');
 require("classes/loader.php");
 ?>
 
@@ -72,6 +71,7 @@ Beroepsproduct 1, HTML & CSS
             <?php
             include($page->getPage());
             ?>
+
         </div>
         <div id="ad">
             <img src="media/logo%20Het%20Drankorgel-site%20barV2.png" alt="Logo" />
@@ -85,5 +85,5 @@ Beroepsproduct 1, HTML & CSS
 </html>
 <?php
 // db connection close
-closeDBConnection($conn);
+$db->closeDBConnection();
 ?>
