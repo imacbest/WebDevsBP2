@@ -12,6 +12,8 @@ $db = new DB('(local)\sqlexpress', "WEBSHOP", "sa", "DbAp");
 include("../classes/Product.class.php");
 $product = new Product(10, $db);
 
-echo $product->getProductNaam();
+echo "Product: " .$product->getProductNaam();
+echo "<br />";
+echo "Beschrijving: " .$product->getOmschrijving();
 
 ?>

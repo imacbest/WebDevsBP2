@@ -28,6 +28,12 @@ class Product {
                 if (sizeof(sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) != 0) {
                     $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
                     $this->productNaam = $row['PRODUCTNAAM'];
+                    $this->omschrijving = $row['OMSCHRIJVING'];
+                    $this->categorie = $row['CATEGORIE'];
+                    $this->prijs = $row['PRIJS'];
+                    $this->vooraad = $row['VOORRAAD'];
+                    $this->imgGroot = $row['AFBEELDING_GROOT'];
+                    $this->imgKlein = $row['AFBEELDING_KLEIN'];
 
                 } else {
                     echo "Product is niet gevonden.";
@@ -43,5 +49,42 @@ class Product {
     public function getProductNaam(){
         return $this->productNaam;
     }
+
+    public function getImgKlein()
+    {
+        return $this->imgKlein;
+    }
+
+    public function getImgGroot()
+    {
+        return $this->imgGroot;
+    }
+
+    public function getVooraad()
+    {
+        return $this->vooraad;
+    }
+
+    public function getPrijs()
+    {
+        return $this->prijs;
+    }
+
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    public function getOmschrijving()
+    {
+        return $this->omschrijving;
+    }
+
+    public function getProductNummer()
+    {
+        return $this->productNummer;
+    }
+
+
 
 }
