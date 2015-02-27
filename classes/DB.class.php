@@ -14,6 +14,7 @@ class DB {
     function __construct($serverName, $dbName, $UID, $pass ) {
         $this->setServerName($serverName);
         $this->setConnectionInfo($dbName, $UID, $pass);
+        $this->openDBConnection();
     }
 
     public function openDBConnection(){
