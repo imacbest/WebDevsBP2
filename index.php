@@ -11,7 +11,7 @@ require("classes/loader.php");
 <!DOCTYPE html>
 <!--
 Made by: Thomas Kool & Max Groenendijk
-Beroepsproduct 1, HTML & CSS
+Beroepsproduct 2
 2015
 -->
 <html>

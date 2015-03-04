@@ -28,8 +28,7 @@ class Page {
             return $this->getPath() . $this->getHome() . $this->getFileType();
         }else{
             $urlExplode = explode("?", $page);
-            $toPage = explode("&", $urlExplode[1]);
-            $toPage = $toPage[0];
+            $toPage = explode("&", $urlExplode[1])[0];
             if(file_exists($this->getPath() . $toPage . $this->getFileType())) {
                 return $this->getPath() . $toPage . $this->getFileType();
             }else{
