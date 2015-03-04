@@ -25,7 +25,7 @@ $result = sqlsrv_query( $db->getConn(), $tsql, null) or die( print_r( sqlsrv_err
 while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
     echo "<div class=\"product\">";
     echo "  <a href='?product&pid=".$row['PRODUCTNUMMER']."' title='".$row['PRODUCTNAAM']."'>
-                            <img height=\"150\" src='".$row['afbeelding']."' alt=
+                            <img height=\"150\" src='media/producten/".$row['afbeelding']."' alt=
                             '".$row['PRODUCTNAAM']."' /></a>
                         <br />".$row['PRODUCTNAAM']."<br />&euro;".$row['PRIJS']."
                         <button type=\"button\">In Winkelwagen</button>";
