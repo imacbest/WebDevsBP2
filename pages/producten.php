@@ -9,11 +9,14 @@
 <h1>Producten</h1>
 <div class="subMenu">
     <ul>
-        <li>Wijn</li>
-        <li>Bier</li>
-        <li>Sterke drank</li>
-        <li>Champagne</li>
-        <li>Liquor</li>
+        <?php
+        $query = "SELECT * FROM CATEGORIE";
+        $result = sqlsrv_query($db->getConn(), $query) or die (print_r(sqlsrv_errors()));
+        while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
+            echo "<li>".$row['CATEGORIENAAM']."</li>";
+        }
+        ?>
+
     </ul>
     <button type="button">Zoeken</button>
 </div>
@@ -21,7 +24,7 @@
 <?php
 $db->openDBConnection();
 $tsql = "SELECT * FROM PRODUCT";
-$result = sqlsrv_query( $db->getConn(), $tsql, null) or die( print_r( sqlsrv_errors() )  );
+$result = sqlsrv_query( $db->getConn(), $tsql) or die( print_r( sqlsrv_errors() )  );
 while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
     echo "<div class=\"product\">";
     echo "  <a href='?product&pid=".$row['PRODUCTNUMMER']."' title='".$row['PRODUCTNAAM']."'>
@@ -32,13 +35,5 @@ while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
     echo "</div>";
 }
 sqlsrv_free_stmt($result);
-
-$query = "SELECT * FROM GEBRUIKER";
-$result = sqlsrv_query($db->getConn(), $query, null) or die (print_r(sqlsrv_errors() ));
-
-while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
-    echo '<p>'. $row['GEBRUIKERSNAAM'] . '</p>';
-}
-
 ?>
     </div>

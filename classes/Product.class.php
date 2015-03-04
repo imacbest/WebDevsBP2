@@ -14,18 +14,17 @@ class Product {
     private $categorie;
     private $prijs;
     private $vooraad;
-    private $imgGroot;
-    private $imgKlein;
+    private $img;
+    private $inhoud;
 
     public function __construct($productID, $conn){
         $this->conn = $conn;
         if(!empty($productID)) {
             if (is_numeric($productID)) {
                 $this->productNummer = $productID;
-                $tsql = "SELECT * FROM PRODUCT WHERE PRODUCTNUMMER = 10"; // '" .addslashes($productID)."' ";
+                $tsql = "SELECT * FROM PRODUCT WHERE PRODUCTNUMMER = " .$productID; // '" .addslashes($productID)."' ";
                 $result = sqlsrv_query($this->conn->getConn(), $tsql, null) or die(print_r(sqlsrv_errors()));
-                echo count(sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC));
-                if (sizeof(sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) != 0) {
+                if(sqlsrv_has_rows ($result)){
                     $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
 
                     $this->productNaam = $row['PRODUCTNAAM'];
@@ -33,8 +32,8 @@ class Product {
                     $this->categorie = $row['CATEGORIE'];
                     $this->prijs = $row['PRIJS'];
                     $this->vooraad = $row['VOORRAAD'];
-                    $this->imgGroot = $row['AFBEELDING_GROOT'];
-                    $this->imgKlein = $row['AFBEELDING_KLEIN'];
+                    $this->img = $row['afbeelding'];
+                    $this->inhoud = $row['INHOUD'];
 
                 } else {
                     echo "Product is niet gevonden.";
@@ -51,15 +50,14 @@ class Product {
         return $this->productNaam;
     }
 
-    public function getImgKlein()
+    public function getImg()
     {
-        return $this->imgKlein;
+        return $this->img;
+    }
+    public function getInhoud(){
+        return $this->inhoud;
     }
 
-    public function getImgGroot()
-    {
-        return $this->imgGroot;
-    }
 
     public function getVooraad()
     {

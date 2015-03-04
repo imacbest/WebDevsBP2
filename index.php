@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Project: WebDevsBP2
  * User: Thomas
