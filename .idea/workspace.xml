@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f86680ce-7cc0-4af7-933a-30e875fd9711" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/User.class.php" afterPath="$PROJECT_DIR$/classes/User.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CSS/mainStyle3.css" afterPath="$PROJECT_DIR$/CSS/mainStyle3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebDevsBP2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,24 +60,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="User.class.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="User.class.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/classes/User.class.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="697">
-                  <caret line="30" column="32" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.69590646" vertical-offset="0" max-vertical-offset="855">
+                  <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
                   <folding>
-                    <marker date="1425644938240" expanded="true" signature="507:546" placeholder="SELECT * FRO..GEBRUIKER..." />
+                    <marker date="1425645659798" expanded="true" signature="532:571" placeholder="SELECT * FRO..GEBRUIKER..." />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mainStyle3.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/CSS/mainStyle3.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.69574946" vertical-offset="1928" max-vertical-offset="2822">
-                  <caret line="150" column="14" selection-start-line="150" selection-start-column="14" selection-end-line="150" selection-end-column="14" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -89,8 +79,8 @@
           <file leaf-file-name="producten.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/producten.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.56797236" vertical-offset="0" max-vertical-offset="868">
-                  <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+                <state vertical-scroll-proportion="0.5092166" vertical-offset="0" max-vertical-offset="868">
+                  <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
                   <folding>
                     <element signature="e#6#86#0#PHP" expanded="true" />
                     <marker date="1425643674198" expanded="true" signature="172:195" placeholder="SELECT * FRO..CATEGORIE..." />
@@ -168,8 +158,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/classes/loader.php" />
         <option value="$PROJECT_DIR$/classes/Product.class.php" />
-        <option value="$PROJECT_DIR$/classes/User.class.php" />
         <option value="$PROJECT_DIR$/CSS/mainStyle3.css" />
+        <option value="$PROJECT_DIR$/classes/User.class.php" />
       </list>
     </option>
   </component>
@@ -909,29 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/User.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="697">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="32" />
-          <folding>
-            <marker date="1425644938240" expanded="true" signature="507:546" placeholder="SELECT * FRO..GEBRUIKER..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/producten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56797236" vertical-offset="0" max-vertical-offset="868">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
-            <marker date="1425643674198" expanded="true" signature="172:195" placeholder="SELECT * FRO..CATEGORIE..." />
-            <marker date="1425643674198" expanded="true" signature="556:577" placeholder="SELECT * FRO..PRODUCT..." />
-            <marker date="1425643674198" expanded="true" signature="860:1019" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSS/mainStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1061" max-vertical-offset="1955">
@@ -948,11 +915,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/producten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5092166" vertical-offset="0" max-vertical-offset="868">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="e#6#86#0#PHP" expanded="true" />
+            <marker date="1425643674198" expanded="true" signature="172:195" placeholder="SELECT * FRO..CATEGORIE..." />
+            <marker date="1425643674198" expanded="true" signature="556:577" placeholder="SELECT * FRO..PRODUCT..." />
+            <marker date="1425643674198" expanded="true" signature="860:1019" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CSS/mainStyle3.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69574946" vertical-offset="1928" max-vertical-offset="2822">
-          <caret line="150" column="14" selection-start-line="150" selection-start-column="14" selection-end-line="150" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.88590604" vertical-offset="1911" max-vertical-offset="2805">
+          <caret line="159" column="1" selection-start-line="159" selection-start-column="1" selection-end-line="159" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/User.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69590646" vertical-offset="0" max-vertical-offset="855">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+          <folding>
+            <marker date="1425645659798" expanded="true" signature="532:571" placeholder="SELECT * FRO..GEBRUIKER..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -18,6 +18,7 @@ class User {
     private $woonplaats;
     private $email;
     private $sexe;
+    private $wachtwoord;
 
     public function User($uid){
         if(!empty($uid)){
@@ -27,11 +28,17 @@ class User {
                 $result = sqlsrv_query($this->conn->getConn(), $tsql, null) or die(print_r(sqlsrv_errors()));
                 if(sqlsrv_has_rows ($result)){
                     $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
+                    $this->username = $row['GEBRUIKSERSNAAM'];
+                    $this->voornaam = $row['VOORNAAM'];
+                    $this->tussenvoegsel = $row['TUSSENVOEGSEL'];
                     $this->achternaam = $row['ACHTERNAAM'];
-                    $this->email = $row[''];
-                    $this->email = $row[''];
-                    $this->email = $row[''];
-                    $this->email = $row[''];
+                    $this->straatnaam = $row['STRAATNAAM'];
+                    $this->huisnummer = $row['HUISNUMMER'];
+                    $this->postcode = $row['POSTCODE'];
+                    $this->woonplaats = $row['WOONPLAATS'];
+                    $this->email = $row['EMAIL'];
+                    $this->sexe = $row['SEXE'];
+                    $this->wachtwoord = $row['WACHTWOORD'];
                 }
 
             }
