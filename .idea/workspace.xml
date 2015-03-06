@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f86680ce-7cc0-4af7-933a-30e875fd9711" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/producten.xlsx" afterPath="$PROJECT_DIR$/producten.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebDevsBP2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +33,8 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.49707603" vertical-offset="170" max-vertical-offset="1649">
-                  <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+                <state vertical-scroll-proportion="0.33801168" vertical-offset="170" max-vertical-offset="1649">
+                  <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -103,8 +104,8 @@
           <file leaf-file-name="Product.class.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/classes/Product.class.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.33801168" vertical-offset="221" max-vertical-offset="1598">
-                  <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+                <state vertical-scroll-proportion="0.67602336" vertical-offset="221" max-vertical-offset="1598">
+                  <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
                   <folding>
                     <element signature="e#6#86#0#PHP" expanded="true" />
                     <marker date="1425639074130" expanded="true" signature="542:586" placeholder="SELECT * FRO..PRODUCT..." />
@@ -374,7 +375,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425639691028</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="exel edit&#10;">
+      <created>1425639757880</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1425639757880</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -893,8 +900,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Product.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33801168" vertical-offset="221" max-vertical-offset="1598">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.67602336" vertical-offset="221" max-vertical-offset="1598">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="e#6#86#0#PHP" expanded="true" />
             <marker date="1425639074130" expanded="true" signature="542:586" placeholder="SELECT * FRO..PRODUCT..." />
@@ -904,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49707603" vertical-offset="170" max-vertical-offset="1649">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.33801168" vertical-offset="170" max-vertical-offset="1649">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
           <folding />
         </state>
       </provider>
