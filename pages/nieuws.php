@@ -32,7 +32,7 @@
     maakt Red Orange ongekend populair, Puschkin Red Orange is niet voor niets al jarenlang
     Nederland’s nummer 1 rode wodka. Puschkin Red Orange is heerlijk in de mix.
     <br /><br />
-    <a href="?product&amp;pid=27">Ga naar Puschkin Red 100CL in de Webshop</a>
+    <a href="?product&amp;pid=27">Ga naar Puschkin Red in de Webshop</a>
 </p>
 <br /><br /><br />
 <h2>Denk alvast aan de zomer</h2>
