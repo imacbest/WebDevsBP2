@@ -14,7 +14,7 @@ echo $user->getUsername();
 
 <!DOCTYPE html>
 <!--
-Made by: Thomas Kool & Max Groenendijk ;)
+Made by: Thomas Kool & Max Groenendijk
 Beroepsproduct 2
 2015
 -->
