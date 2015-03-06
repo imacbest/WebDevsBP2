@@ -9,7 +9,7 @@
 
 <!-- menu content -->
 <ul>
-    <li><a href="?home" title="Nieuws">Nieuws</a></li>
+    <li><a href="?nieuws" title="Nieuws">Nieuws</a></li>
     <li><a href="?acties" title="Acties">Acties</a> </li>
     <li><a href="?aboutUs" title="Over ons">Over&nbsp;ons</a></li>
     <li><a href="?vacatures" title="Vacatures">Vacatures</a></li>
