@@ -22,7 +22,7 @@ class Product {
         if(!empty($productID)) {
             if (is_numeric($productID)) {
                 $this->productNummer = $productID;
-                $tsql = "SELECT * FROM PRODUCT WHERE PRODUCTNUMMER = " .$productID; // '" .addslashes($productID)."' ";
+                $tsql = "SELECT * FROM PRODUCT WHERE PRODUCTNUMMER = " .$productID;
                 $result = sqlsrv_query($this->conn->getConn(), $tsql, null) or die(print_r(sqlsrv_errors()));
                 if(sqlsrv_has_rows ($result)){
                     $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
