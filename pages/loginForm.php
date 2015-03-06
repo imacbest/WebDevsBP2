@@ -14,29 +14,6 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
 
 }
 
-function logout(){
-    session_destroy();
-}
-
-//function checkLogin($username, $password){
-//    $query = "SELECT * FORM GEBRUIKERS WHERE GEBRUIKERSNAAM = '".addslashes($username)."'
-//        AND WACHTWOORD = '".addslashes($password)."'";
-//    $result = sqlsrv_query($db->getConn(), $query, array(), array("Srollable" = > SQLSRV_CURSOR_KEYSET));
-//    if(sqlsrv_num_rows($result) == 1){
-//        echo "User found!";
-//        $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
-//        $_SESSION['uid'] = $row['userID'];
-//    }else if (sqlsrv_num_rows($result) > 1){
-//        echo "Meerdere gebruikers gevonden";
-//    }else{
-//        echo "Gebruiker is niet gevonden";
-//    }
-//}
-
-function createUser($username, $password, $voornaam, $tussenvoegsel, $achternaam, $straatnaam, $postcode,
-    $huisnummer, $woonplaats, $email, $sexe){
-
-}
 ?>
 <div id="login">
     <form>

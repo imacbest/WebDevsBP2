@@ -19,7 +19,7 @@ class User {
     private $email;
     private $sexe;
     private $wachtwoord;
-    private $conn;
+    private $db;
 
     public function User($uid, $conn){
         $this->conn = $conn;
@@ -48,10 +48,34 @@ class User {
 
     }
 
-    public function __construct(){
+    public function __construct($db){
+        $this->db = $db;
+    }
+
+    public function checkLogin($username, $password){
+        $query = "SELECT * FORM GEBRUIKERS WHERE GEBRUIKERSNAAM = '".addslashes($username)."'
+            AND WACHTWOORD = '".addslashes($password)."'";
+        $result = sqlsrv_query($this->db->getConn(), $query, array(), array("Srollable" = > SQLSRV_CURSOR_KEYSET));
+        if(sqlsrv_num_rows($result) == 1){
+            echo "User found!";
+            $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
+            $_SESSION['uid'] = $row['userID'];
+        }else if (sqlsrv_num_rows($result) > 1){
+            echo "Meerdere gebruikers gevonden";
+        }else{
+            echo "Gebruiker is niet gevonden";
+        }
+    }
+
+    public function logout(){
+        session_destroy();
 
     }
 
+    function createUser($username, $password, $voornaam, $tussenvoegsel, $achternaam, $straatnaam, $postcode,
+                        $huisnummer, $woonplaats, $email, $sexe){
+
+    }
 
 
     public function getUsername()
