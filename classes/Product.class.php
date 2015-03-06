@@ -28,7 +28,7 @@ class Product {
                     $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
 
                     $this->productNaam = $row['PRODUCTNAAM'];
-                    $this->omschrijving = $row['OMSCHRIJVING'];
+                    $this->omschrijving =  ($row['OMSCHRIJVING']);
                     $this->categorie = $row['CATEGORIE'];
                     $this->prijs = $row['PRIJS'];
                     $this->vooraad = $row['VOORRAAD'];

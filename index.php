@@ -17,7 +17,7 @@ Beroepsproduct 2
 -->
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
     <title>Het Drankorgel</title>
     <!-- stylesheets -->
     <link type="text/css" rel="stylesheet" href="CSS/mainStyle3.css" />
