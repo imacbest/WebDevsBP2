@@ -9,14 +9,20 @@
 ?>
 <?php
 if(isset($_SESSION['uid'])){ // user is ingelogd
+    ?>
 
+    Welkom <?=$user->getVoornaam(). " " .$user->getAchternaam();?>
+    <a href="?nieuws&amp;logout=true" title="Log uit">Log uit</a>
+    <?php
 }else{ // user is niet ingelogd
+    if(isset($_POST['username']) && isset($_POST['password'])){
+        checkLogin($_POST['username'], $_POST['password'], $db);
+    }else{
 
-}
+
 
 ?>
-<div id="login">
-    <form>
+    <form method="post">
         <h3>Log in</h3>
         <table>
             <tr>
@@ -30,6 +36,12 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
         </table>
         <input type="checkbox" name="remember" title="remember" /> Onthouden
         <a href="#" title="vergeten?" >vergeten?</a> <a href="../pages/registreren.html" title="Registreer">Registreer</a>
-        <input type="button" title="log on" name="Log on" value="Log in" />
+        <input type="submit" title="log on" name="Log on" value="Log in" />
     </form>
-</div>
+
+
+<?php
+    }
+}
+?>
+

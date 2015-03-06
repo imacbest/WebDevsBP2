@@ -6,10 +6,21 @@ session_start();
  * Date: 24-2-2015
  * Time: 9:48
  */
-$_SESSION['uid'] = 9;
+//$_SESSION['uid'] = 1;
+if(isset($_GET['logout'])){
+    if($_GET['logout']){
+        logout();
+    }
+}
+
 require("classes/loader.php");
 
-echo $user->getUsername();
+
+
+function logout(){
+    session_destroy();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,9 +49,11 @@ Beroepsproduct 2
         </a>
         <!-- end logo -->
         <!-- login -->
-        <?php
-        include("pages/loginForm.php");
-        ?>
+        <div id="login">
+            <?php
+            include("pages/loginForm.php");
+            ?>
+        </div>
         <!-- end login -->
 
     </div>

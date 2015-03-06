@@ -13,6 +13,7 @@ class Page {
     private $fileType = ".php";
     private $errorFile = "error";
     private $home = "nieuws";
+    private $currentPage;
 
 
     function __construct() {
@@ -24,17 +25,20 @@ class Page {
      */
     public function getPage(){
         $page = $_SERVER['REQUEST_URI'];
+        $toPage = "";
         if($page == '/WebDevsBP2/' OR $page == "/WebDevsBP2/index.php"){
-            return $this->getPath() . $this->getHome() . $this->getFileType();
+            $toPage = $this->getHome();
         }else{
             $urlExplode = explode("?", $page);
-            $toPage = explode("&", $urlExplode[1])[0];
-            if(file_exists($this->getPath() . $toPage . $this->getFileType())) {
-                return $this->getPath() . $toPage . $this->getFileType();
+            $page = explode("&", $urlExplode[1])[0];
+            if(file_exists($this->getPath() .$page . $this->getFileType())) {
+                $toPage = $page;
             }else{
-                return $this->getPath() . $this->getErrorFile() . $this->getFileType();
+                $toPage = $this->getErrorFile();
             }
         }
+        $this->currentPage = $toPage;
+        return $this->getPath().$toPage . $this->getFileType();
     }
 
     /**
@@ -83,6 +87,14 @@ class Page {
     public function setHome($home)
     {
         $this->home = $home;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCurrentPage()
+    {
+        return $this->currentPage;
     }
 
 
