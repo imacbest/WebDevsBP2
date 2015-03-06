@@ -31,7 +31,7 @@ while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
     echo "  <a href='?product&pid=".$row['PRODUCTNUMMER']."' title='".$row['PRODUCTNAAM']."'>
                             <img height=\"150\" src='media/producten/".$row['afbeelding']."' alt=
                             '".$row['PRODUCTNAAM']."' /></a>
-                        <br />".$row['PRODUCTNAAM']."<br />&euro;".$row['PRIJS']."
+                        <br />".$row['PRODUCTNAAM']."<br />&euro;".$row['PRIJS']."<br />
                         <button type=\"button\">In Winkelwagen</button>";
     echo "</div>";
 }
