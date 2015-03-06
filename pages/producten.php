@@ -25,6 +25,7 @@
 $db->openDBConnection();
 $tsql = "SELECT * FROM PRODUCT";
 $result = sqlsrv_query( $db->getConn(), $tsql) or die( print_r( sqlsrv_errors() )  );
+echo "Num rows" . sqlsrv_num_rows($result);
 while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
     echo "<div class=\"product\">";
     echo "  <a href='?product&pid=".$row['PRODUCTNUMMER']."' title='".$row['PRODUCTNAAM']."'>
