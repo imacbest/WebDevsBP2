@@ -32,7 +32,6 @@ if(isset($_GET['filter'])){
     }
 
 }
-$db->openDBConnection();
 $tsql = "SELECT * FROM PRODUCT ".$filter;
 $result = sqlsrv_query( $db->getConn(), $tsql) or die( print_r( sqlsrv_errors() )  );
 
