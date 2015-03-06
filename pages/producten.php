@@ -13,7 +13,7 @@
         $query = "SELECT * FROM CATEGORIE";
         $result = sqlsrv_query($db->getConn(), $query) or die (print_r(sqlsrv_errors()));
         while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
-            echo "<li>".$row['CATEGORIENAAM']."</li>";
+            echo "<li><a href='?producten&amp;filter=".$row['CATEGORIENAAM']."'>".$row['CATEGORIENAAM']."</a> </li>";
         }
         ?>
 
