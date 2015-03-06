@@ -32,7 +32,7 @@ Beroepsproduct 2
     <!-- header -->
     <div id="header">
         <!-- logo -->
-        <a href="?home" title="Home">
+        <a href="?nieuws" title="Home">
             <div id="logo">
             </div>
         </a>
