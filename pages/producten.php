@@ -8,6 +8,7 @@
 ?>
 <h1>Producten</h1>
 <div class="subMenu">
+    Categorien
     <ul>
         <li><a href="?producten" title="Laat alles zien">Alles</a> </li>
         <?php
@@ -19,7 +20,7 @@
         ?>
 
     </ul>
-    <button type="button">Zoeken</button>
+    <br />
 </div>
 <div id="producten">
 <?php
@@ -30,7 +31,12 @@ if(isset($_GET['filter'])){
     if(sqlsrv_num_rows($result) ){
         $filter = "WHERE CATEGORIE = '".$_GET['filter']."'";
     }
-
+}
+if(isset($_GET['s'])){
+    if(!empty($filter)){
+        $filter .= " AND ";
+    }
+    $filter .= "PRODUCTNAAM like '%".addslashes($_GET['s'])."%'";
 }
 $tsql = "SELECT * FROM PRODUCT ".$filter;
 $result = sqlsrv_query( $db->getConn(), $tsql) or die( print_r( sqlsrv_errors() )  );
