@@ -9,6 +9,7 @@
 <h1>Producten</h1>
 <div class="subMenu">
     <ul>
+        <li><a href="?producten" title="Laat alles zien">Alles</a> </li>
         <?php
         $query = "SELECT * FROM CATEGORIE";
         $result = sqlsrv_query($db->getConn(), $query) or die (print_r(sqlsrv_errors()));
@@ -22,8 +23,17 @@
 </div>
 <div id="producten">
 <?php
+$filter = "";
+if(isset($_GET['filter'])){
+    $query = "SELECT * FROM CATEGORIE WHERE CATEGORIENAAM = '".addslashes($_GET['filter'])."'";
+    $result = sqlsrv_query($db->getConn(),$query, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
+    if(sqlsrv_num_rows($result) ){
+        $filter = "WHERE CATEGORIE = '".$_GET['filter']."'";
+    }
+
+}
 $db->openDBConnection();
-$tsql = "SELECT * FROM PRODUCT";
+$tsql = "SELECT * FROM PRODUCT ".$filter;
 $result = sqlsrv_query( $db->getConn(), $tsql) or die( print_r( sqlsrv_errors() )  );
 
 while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
