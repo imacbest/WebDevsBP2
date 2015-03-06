@@ -6,7 +6,10 @@ session_start();
  * Date: 24-2-2015
  * Time: 9:48
  */
+
 require("classes/loader.php");
+session_destroy();
+
 ?>
 
 <!DOCTYPE html>
