@@ -12,7 +12,7 @@ class Page {
     private $path = "pages/";
     private $fileType = ".php";
     private $errorFile = "error";
-    private $home = "home";
+    private $home = "nieuws";
 
 
     function __construct() {
