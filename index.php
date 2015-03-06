@@ -6,9 +6,9 @@ session_start();
  * Date: 24-2-2015
  * Time: 9:48
  */
-
+$_SESSION['uid'] = 9;
 require("classes/loader.php");
-$_SESSION['uid'] = 1;
+
 echo $user->getUsername();
 ?>
 

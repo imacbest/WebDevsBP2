@@ -26,7 +26,6 @@ class Product {
                 $result = sqlsrv_query($this->conn->getConn(), $tsql, null) or die(print_r(sqlsrv_errors()));
                 if(sqlsrv_has_rows ($result)){
                     $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
-
                     $this->productNaam = $row['PRODUCTNAAM'];
                     $this->omschrijving =  ($row['OMSCHRIJVING']);
                     $this->categorie = $row['CATEGORIE'];

@@ -30,7 +30,7 @@ class User {
                 $result = sqlsrv_query($this->conn->getConn(), $tsql, null) or die(print_r(sqlsrv_errors()));
                 if(sqlsrv_has_rows ($result)){
                     $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
-                    $this->username = $row['GEBRUIKSERSNAAM'];
+                    $this->username = $row['GEBRUIKERSNAAM'];
                     $this->voornaam = $row['VOORNAAM'];
                     $this->tussenvoegsel = $row['TUSSENVOEGSEL'];
                     $this->achternaam = $row['ACHTERNAAM'];
