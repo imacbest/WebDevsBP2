@@ -18,17 +18,21 @@
     Mooi om weg te geven maar nog beter om te krijgen.
     De fles heeft een inhoud van 1,5 liter. Alcoholpercentage 5 %.
     Daarom zijn wij blij dat wij dit perfecte cadeau aan ons assortiment
-    hebben kunnen toevoegen.</p>
+    hebben kunnen toevoegen.
+    <br /><br />
+    <a href="?product&amp;pid=27">Ga naar Grolsch Pils Beugel XXL in de Webshop</a></p>
 <br />
 <p>
     <img height="125" src="media/producten/Puschkin_Red_100.png" alt="wij" class="imgLeft" />
 </p>
-<h3>Puschkin Red 100CL</h3>
+<h3>Puschkin Red</h3>
 <p>
     Puschkin Red Orange (17,7%) combineert de kracht van Puschkin wodka met de
     heerlijke bitterzoete smaak van rode bloedsinaasappelen. Deze kenmerkende smaak
     maakt Red Orange ongekend populair, Puschkin Red Orange is niet voor niets al jarenlang
     Nederland’s nummer 1 rode wodka. Puschkin Red Orange is heerlijk in de mix.
+    <br /><br />
+    <a href="?product&amp;pid=27">Ga naar Puschkin Red 100CL in de Webshop</a>
 </p>
 <br /><br /><br />
 <h2>Denk alvast aan de zomer</h2>
@@ -63,5 +67,7 @@
     Pellentesque metus diam, imperdiet at porttitor vel, ultricies vitae quam.
     Integer eget consequat massa. Praesent dolor odio, pretium vestibulum massa ut,
     luctus luctus erat.
+    <br /><br />
+    Interresse? Mail naar <a href="mailto:stage@hetdrankorgel.nl">stage@hetdrankorgel.nl</a>!
 </p>
 <br /><br />
