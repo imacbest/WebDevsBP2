@@ -38,24 +38,9 @@ Beroepsproduct 2
         </a>
         <!-- end logo -->
         <!-- login -->
-        <div id="login">
-            <form>
-                <h3>Log in</h3>
-                <table>
-                    <tr>
-                        <td>Gebruikersnaam</td>
-                        <td>Wachtwoord</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="username" title="username" placeholder="Gebruikersnaam" /> </td>
-                        <td><input type="password" name="password" title="password" placeholder="Wachtwoord" /></td>
-                    </tr>
-                </table>
-                <input type="checkbox" name="remember" title="remember" /> Onthouden
-                <a href="#" title="vergeten?" >vergeten?</a> <a href="../pages/registreren.html" title="Registreer">Registreer</a>
-                <input type="button" title="log on" name="Log on" value="Log in" />
-            </form>
-        </div>
+        <?php
+        include("pages/loginForm.php");
+        ?>
         <!-- end login -->
 
     </div>
