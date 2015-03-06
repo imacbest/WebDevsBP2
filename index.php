@@ -8,8 +8,8 @@ session_start();
  */
 
 require("classes/loader.php");
-session_destroy();
-
+$_SESSION['uid'] = 1;
+echo $user->getUsername();
 ?>
 
 <!DOCTYPE html>

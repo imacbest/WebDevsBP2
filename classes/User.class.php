@@ -19,8 +19,10 @@ class User {
     private $email;
     private $sexe;
     private $wachtwoord;
+    private $conn;
 
-    public function User($uid){
+    public function User($uid, $conn){
+        $this->conn = $conn;
         if(!empty($uid)){
             if(is_numeric($uid)){
                 $this->uid = $uid;
@@ -45,4 +47,63 @@ class User {
         }
 
     }
+
+
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function getVoornaam()
+    {
+        return $this->voornaam;
+    }
+
+    public function getTussenvoegsel()
+    {
+        return $this->tussenvoegsel;
+    }
+
+    public function getAchternaam()
+    {
+        return $this->achternaam;
+    }
+
+    public function getStraatnaam()
+    {
+        return $this->straatnaam;
+    }
+
+    public function getHuisnummer()
+    {
+        return $this->huisnummer;
+    }
+
+    public function getPostcode()
+    {
+        return $this->postcode;
+    }
+
+    public function getWoonplaats()
+    {
+        return $this->woonplaats;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    public function getUid()
+    {
+        return $this->uid;
+    }
+
+
 }
