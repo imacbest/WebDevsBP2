@@ -10,9 +10,10 @@ function checkLogin($username, $password, $db){
      AND WACHTWOORD like '".addslashes($password)."'";
     $result = sqlsrv_query($db->getConn(),$query, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
     if(sqlsrv_num_rows($result) ){
-        echo "User found!";
+        //echo "User found!";
         $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
         $_SESSION['uid'] = $row['userID'];
+        header("Refresh:0");
     }else{
         echo "Gebruiker is niet gevonden";
     }
