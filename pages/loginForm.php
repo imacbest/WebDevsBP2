@@ -35,7 +35,7 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
             </tr>
         </table>
         <input type="checkbox" name="remember" title="remember" /> Onthouden
-        <a href="#" title="vergeten?" >vergeten?</a> <a href="../pages/registreren.html" title="Registreer">Registreer</a>
+        <a href="#" title="vergeten?" >vergeten?</a> <a href="?registreren" title="Registreer">Registreer</a>
         <input type="submit" title="log on" name="Log on" value="Log in" />
     </form>
 
