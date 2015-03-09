@@ -7,8 +7,6 @@ session_start();
  * Time: 9:48
  */
 //$_SESSION['uid'] = 1;
-
-
 require("classes/loader.php");
 if(isset($_GET['logout'])){
     if($_GET['logout']){

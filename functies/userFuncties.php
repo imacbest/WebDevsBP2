@@ -25,6 +25,7 @@ function createUser($username, $password, $voornaam, $tussenvoegsel, $achternaam
 }
 function logout(){
     session_destroy();
+    header("Location: ?nieuws");
 }
 
 ?>
