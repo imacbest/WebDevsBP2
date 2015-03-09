@@ -12,7 +12,7 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
     ?>
 
     Welkom <?=$user->getVoornaam(). " " .$user->getAchternaam();?>
-    <a href="?nieuws&amp;logout=true;" title="Log uit"><Log uit</a>
+    <a href="?nieuws&amp;logout=true;" title="Log uit">Log uit</a>
     <?php
 }else{ // user is niet ingelogd
     if(isset($_POST['username']) && isset($_POST['password'])){
