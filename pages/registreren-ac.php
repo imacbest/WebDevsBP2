@@ -18,7 +18,7 @@ $phonenumber = $_POST['phonenumber'];
 
 $countError = 0;
 $msg = "";
-$check = false;
+
 
 
 if(empty($_POST['username'])) {
@@ -26,54 +26,61 @@ if(empty($_POST['username'])) {
     $countError++;
 }
 if(empty($_POST['password'])) {
-    echo "Wachtwoord is niet ingevuld!<br />";
+    $msg .= "Wachtwoord is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['password2'])) {
-    echo "Herhaal wachtwoord is niet ingevuld!<br />";
+    $msg .= "Herhaal wachtwoord is niet ingevuld!<br />";
     $countError++;
 }
 if($_POST['password'] != $_POST['password2']) {
-    echo "Het wachtwoord en het herhaalde wachtwoord corresponderen niet!<br />";
+    $msg .= "Het wachtwoord en het herhaalde wachtwoord corresponderen niet!<br />";
     $countError++;
 }
 if(empty($_POST['aanhef'])) {
-    echo "Aanhef is niet ingevuld!<br />";
+    $msg .= "Aanhef is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['firstname'])) {
-    echo "De voornaam is niet ingevuld!<br />";
+    $msg .= "De voornaam is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['lastname'])) {
-    echo "De achternaam is niet ingevuld!<br />";
+    $msg .= "De achternaam is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['email'])) {
-    echo "Het e-mailadres is niet ingevuld!<br />";
+    $msg .= "Het e-mailadres is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['street'])) {
-    echo "De straatnaam is niet ingevuld!<br />";
+    $msg .= "De straatnaam is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['houseNumber'])) {
-    echo "Het huisnummer is niet ingevuld!<br />";
+    $msg .= "Het huisnummer is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['zipcode'])) {
-    echo "De postcode is niet ingevuld!<br />";
+    $msg .= "De postcode is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['city'])) {
-    echo "De plaatsnaam is niet ingevuld!<br />";
+    $msg .= "De plaatsnaam is niet ingevuld!<br />";
     $countError++;
 }
 if(empty($_POST['phonenumber'])) {
-    echo "Het telefoonnummer is niet ingevuld!<br />";
+    $msg .= "Het telefoonnummer is niet ingevuld!<br />";
     $countError++;
 }
 
+if($_POST['aanhef'] == "Dhr.") {
+    $aanhef = "m";
+}else if($_POST['aanhef'] == "Mvr.") {
+    $aanhef = "v";
+}
+
+echo $msg;
 
 if($countError == 1) {
     echo "<br ?>Er is ".$countError." fout gevonden!<br />";
@@ -84,21 +91,11 @@ if($countError == 1) {
 }else if($countError == 0) {
     echo "U bent succesvol geregistreerd! Bevestig u registratie via de link in u e-mail.";
     echo '<a href=?nieuws title="Terug naar de beginpagina">Terug naar de beginpagina</a>';
-    $check = true;
+    createUser($_POST['username'], $_POST['firstname'], $_POST['tussenvoegsel'], $_POST['lastname'],
+        $_POST['street'], $_POST['houseNumber'], $_POST['zipcode'], $_POST['city'], $_POST['email'],
+        $aanhef, $_POST['password']);
 }
 
-if($aanhef == "Dhr.") {
-    $aanhef = "m";
-    echo $aanhef;
-}else if($aanhef == "Mvr.") {
-    $aanhef = "v";
-}
-
-if($check == true) {
-
-    createUser();
-
-}
 
 
 ?>

@@ -19,12 +19,15 @@ function checkLogin($username, $password, $db){
     }
 }
 
-function createUser($username, $password, $voornaam, $tussenvoegsel, $achternaam, $straatnaam, $postcode,
-                    $huisnummer, $woonplaats, $email, $sexe){
-    $sql="INSERT INTO " .$tbl_name . "([GEBRUIKERSNAAM], [VOORNAAM], [TUSSENVOEGSEL], [ACHTERNAAM],
+function createUser($username, $firstname, $tussenvoegsel, $lastname, $street,  $huisnummer, $postcode,
+                   $woonplaats, $email, $sexe, $password){
+    $password = hash('sha256', $password);
+    $sql="INSERT INTO " ."GEBRUIKER". "([GEBRUIKERSNAAM], [VOORNAAM], [TUSSENVOEGSEL], [ACHTERNAAM],
     [STRAATNAAM], [HUISNUMMER], [POSTCODE], [WOONPLAATS], [EMAIL], [SEXE], [WACHTWOORD])
-    VALUES('".addslashes($username)."', '$firstname', '$tussenvoegsel','$lastname', '$street', '$houseNumber',
-    '$zipcode', '$city', '$email', '$aanhef', '$password')";
+    VALUES('".addslashes($username)."', '".addslashes($firstname)."', '".addslashes($tussenvoegsel)."','".addslashes($lastname)."', '".addslashes($street)."', '".addslashes($huisnummer)."',
+    '".addslashes($postcode)."', '".addslashes($woonplaats)."', '".addslashes($email)."', '".addslashes($sexe)."', '".addslashes($password)."')";
+    sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
+
 }
 function logout(){
     session_destroy();
