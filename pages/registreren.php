@@ -1,14 +1,12 @@
 <?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 24-2-2015
- * Time: 10:26
- */
+
 ?>
 <h1>Registreren</h1>
 <form>
     <table class="tableBorder">
+        <tr>
+            <td><form name="registreren" method="post" action="?registreren-ac">
+        </tr>
         <tr>
             <td class="tableBorder">Accountgegevens</td>
             <td class="tableBorder">Factuuradres</td>
@@ -20,7 +18,7 @@
                 Wachtwoord* <br />
                 <input type="password" name="password" placeholder="Wachtwoord" /> <br />
                 Herhaal wachtwoord* <br />
-                <input type="password" name="password" placeholder="Herhaal wachtwoord" />
+                <input type="password" name="password2" placeholder="Herhaal wachtwoord" />
             </td>
             <td class="tableBorder">
                 <table>
@@ -53,7 +51,7 @@
                     </tr>
                     <tr>
                         <td colspan="2"><input type="text" name="street" placeholder="Straat" /> </td>
-                        <td colspan="2"><input type="text" name="housNumber" placeholder="Huis nummer" /> </td>
+                        <td colspan="2"><input type="text" name="houseNumber" placeholder="Huisnummer" /> </td>
                     </tr>
                     <tr>
                         <td colspan="2">Postcode* </td>
@@ -67,8 +65,8 @@
                         <td colspan="4">Telefoon*</td>
                     </tr>
                     <tr>
-                        <td colspan="3"><input type="text" name="street" placeholder="Straat" /> </td>
-                        <td><input type="submit" value="Opslaan"/> </td>
+                        <td colspan="3"><input type="text" name="phonenumber" placeholder="Telefoonnummer" /> </td>
+                        <td><input type="submit" name="Opslaan" value="Opslaan"/> </td>
                     </tr>
 
                 </table>
