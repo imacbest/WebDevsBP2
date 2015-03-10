@@ -5,6 +5,14 @@
  * Date: 24-2-2015
  * Time: 10:47
  */
+
+if(isset($_GET['pAdd'])){
+    if(!empty($_GET['pAdd'])){
+        $cart->addToCart($_GET['pAdd'], 1);
+        echo "Product is toegevoegd aan je winkelwagentje!";
+    }
+}
+
 ?>
 <h1>Producten</h1>
 <div class="subMenu">
@@ -47,7 +55,7 @@ while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
                             <img height=\"150\" src='media/producten/".$row['afbeelding']."' alt=
                             '".$row['PRODUCTNAAM']."' /></a>
                         <br />".$row['PRODUCTNAAM']."<br />&euro;".$row['PRIJS']."<br />
-                        <button type=\"button\">In Winkelwagen</button>";
+                        <a href='?producten&pAdd=".$row['PRODUCTNUMMER']."' title='Voeg ".$row['PRODUCTNAAM']." toe aan het winkelwagentje!'>In Winkelwagen</a>";
     echo "</div>";
 }
 sqlsrv_free_stmt($result);

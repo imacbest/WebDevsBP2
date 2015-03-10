@@ -22,6 +22,8 @@ $zipcode = $_POST['zipcode'];
 $city = $_POST['city'];
 $phonenumber = $_POST['phonenumber'];
 
+$countError = 0;
+$check = false;
 
 
 if(empty($_POST['username'])) {
