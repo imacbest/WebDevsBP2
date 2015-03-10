@@ -12,6 +12,19 @@ if(isset($_GET['removeID'])){
         echo "Product is verwijderd uit je winkelwagentje!";
     }
 }
+if(isset($_GET['pAdd'])){
+    if(!empty($_GET['pAdd'])){
+        $cart->addToCart($_GET['pAdd'], 1);
+        echo "+1";
+    }
+}
+if(isset($_GET['pRemove'])){
+    if(!empty($_GET['pRemove'])){
+        $cart->removeAmountFromCart($_GET['pRemove'], 1);
+        echo "-1";
+    }
+}
+
 
 require("classes/Product.class.php");
 
@@ -46,7 +59,7 @@ if($cart->isCartEmpty()){
                     <td><a href="?product&amp;pid=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>" title="<?= $product->getProductNaam(); ?>"><img src="media/producten/<?= $product->getImg(); ?>" class="imgPreview" alt="Jack" height="250" /></a> </td>
                     <td><a href="?product&amp;pid=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>" title="<?= $product->getProductNaam(); ?>"><?= $product->getProductNaam(); ?></a></td>
                     <td>&euro; <?= $product->getPrijs(); ?></td>
-                    <td><?= $_SESSION['winkelwagen'][$i]['aantal']; ?> </td>
+                    <td><?= $_SESSION['winkelwagen'][$i]['aantal']; ?> <a href="?winkelwagen&amp;pAdd=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>"> + </a> |  <a href="?winkelwagen&amp;pRemove=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>"> - </a> </td>
                     <td>&euro; <?= $product->getPrijs() * $_SESSION['winkelwagen'][$i]['aantal']; ?> </td>
                     <td><a href="?winkelwagen&amp;removeID=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>" title="Verwijder <?= $product->getProductNaam(); ?> uit je winkelwagentje">Verwijder</a> </td>
                 </tr>

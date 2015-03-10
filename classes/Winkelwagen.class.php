@@ -11,6 +11,9 @@ class Winkelwagen {
     public $test ="its working";
 
     public function removeAmountFromCart($productID, $amount){
+        if(!is_numeric($productID) && !is_numeric($productID)){
+            return false;
+        }
         if(array_key_exists('winkelwagen', $_SESSION)) {
             for ($i = 0; $i < count($_SESSION['winkelwagen']); $i++) {
                 if ($_SESSION['winkelwagen'][$i]['productID'] == $productID) {
@@ -25,6 +28,9 @@ class Winkelwagen {
     }
 
     public function removeAllFromCart($productID){
+        if(!is_numeric($productID)){
+            return false;
+        }
         if(array_key_exists('winkelwagen', $_SESSION)) {
             for ($i = 0; $i < count($_SESSION['winkelwagen']); $i++) {
                 if ($_SESSION['winkelwagen'][$i]['productID'] == $productID) {
@@ -34,6 +40,9 @@ class Winkelwagen {
         }
     }
     public function addToCart($productID, $amount){
+        if(!is_numeric($productID) && !is_numeric($productID)){
+            return false;
+        }
         if(array_key_exists('winkelwagen', $_SESSION)) {
             if ($this->checkIfProductInCart($productID)) {
                 for ($i = 0; $i < count($_SESSION['winkelwagen']); $i++) {
@@ -54,6 +63,9 @@ class Winkelwagen {
     }
 
     public function checkIfProductInCart($productID){
+        if(!is_numeric($productID)){
+            return false;
+        }
         for ($i = 0; $i < count($_SESSION['winkelwagen']); $i++) {
             if ($_SESSION['winkelwagen'][$i]['productID'] == $productID) {
                 return true;
