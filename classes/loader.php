@@ -6,7 +6,7 @@
  * @time: 01:37
  */
 require("DB.class.php");
-global $db
+global $db;
 $db = new DB('(local)\sqlexpress', "WEBSHOP", "sa", "DbAp");
 
 require("functies/userFuncties.php");
