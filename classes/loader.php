@@ -26,4 +26,7 @@ if(isset($_SESSION['uid'])){
 
 require("page.class.php");
 $page = new Page();
+
+require("Winkelwagen.class.php");
+$cart = new Winkelwagen();
 ?>
