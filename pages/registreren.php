@@ -2,11 +2,8 @@
 
 ?>
 <h1>Registreren</h1>
-<form>
+<form name="registreren" method="post" action="?registreren-ac">
     <table class="tableBorder">
-        <tr>
-            <td><form name="registreren" method="post" action="?registreren-ac">
-        </tr>
         <tr>
             <td class="tableBorder">Accountgegevens</td>
             <td class="tableBorder">Factuuradres</td>
