@@ -3,7 +3,7 @@
 
 
 
-$countError = 0
+$countError = 0;
 
 if(empty($_POST['username'])) {
     echo "Gebruikersnaam is niet ingevuld!";
