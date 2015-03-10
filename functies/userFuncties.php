@@ -21,7 +21,10 @@ function checkLogin($username, $password, $db){
 
 function createUser($username, $password, $voornaam, $tussenvoegsel, $achternaam, $straatnaam, $postcode,
                     $huisnummer, $woonplaats, $email, $sexe){
-
+    $sql="INSERT INTO " .$tbl_name . "([GEBRUIKERSNAAM], [VOORNAAM], [TUSSENVOEGSEL], [ACHTERNAAM],
+    [STRAATNAAM], [HUISNUMMER], [POSTCODE], [WOONPLAATS], [EMAIL], [SEXE], [WACHTWOORD])
+    VALUES('".addslashes($username)."', '$firstname', '$tussenvoegsel','$lastname', '$street', '$houseNumber',
+    '$zipcode', '$city', '$email', '$aanhef', '$password')";
 }
 function logout(){
     session_destroy();
