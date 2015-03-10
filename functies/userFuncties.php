@@ -6,8 +6,9 @@
  * Time: 16:45
  */
 function checkLogin($username, $password, $db){
+    $password = hash('sha256', $password);
     $query = "SELECT * FROM GEBRUIKER WHERE GEBRUIKERSNAAM like '".addslashes($username)."'
-     AND WACHTWOORD like '".addslashes($password)."'";
+     AND WACHTWOORD like '".$password."'";
     $result = sqlsrv_query($db->getConn(),$query, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
     if(sqlsrv_num_rows($result) == 1 ){
         //echo "User found!";
@@ -25,7 +26,7 @@ function createUser($username, $firstname, $tussenvoegsel, $lastname, $street,  
     $sql="INSERT INTO GEBRUIKER ([GEBRUIKERSNAAM], [VOORNAAM], [TUSSENVOEGSEL], [ACHTERNAAM],
     [STRAATNAAM], [HUISNUMMER], [POSTCODE], [WOONPLAATS], [EMAIL], [SEXE], [WACHTWOORD])
     VALUES('".addslashes($username)."', '".addslashes($firstname)."', '".addslashes($tussenvoegsel)."','".addslashes($lastname)."', '".addslashes($street)."', '".addslashes($huisnummer)."',
-    '".addslashes($postcode)."', '".addslashes($woonplaats)."', '".addslashes($email)."', '".addslashes($sexe)."', '".addslashes($password)."')";
+    '".addslashes($postcode)."', '".addslashes($woonplaats)."', '".addslashes($email)."', '".addslashes($sexe)."', '".$password."')";
     sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
 
 }
