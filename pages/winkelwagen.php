@@ -38,6 +38,9 @@ if($cart->isCartEmpty()){
     echo "Het winkelwagentje is nog leeg, je kunt op de <a href='?producten' title='producten'>producten pagina</a> onze producten vinden."; // geen items in winkelwagen
 }else {
 ?>
+
+
+
     <table class="winkelwagen">
     <tr>
         <th>&nbsp;</th>
@@ -59,9 +62,13 @@ if($cart->isCartEmpty()){
                     <td><a href="?product&amp;pid=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>" title="<?= $product->getProductNaam(); ?>"><img src="media/producten/<?= $product->getImg(); ?>" class="imgPreview" alt="Jack" height="250" /></a> </td>
                     <td><a href="?product&amp;pid=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>" title="<?= $product->getProductNaam(); ?>"><?= $product->getProductNaam(); ?></a></td>
                     <td>&euro; <?= $product->getPrijs(); ?></td>
-                    <td><?= $_SESSION['winkelwagen'][$i]['aantal']; ?> <a href="?winkelwagen&amp;pAdd=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>"> + </a> |  <a href="?winkelwagen&amp;pRemove=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>"> - </a> </td>
+                    <td><?= $_SESSION['winkelwagen'][$i]['aantal']; ?>
+                    <a href="?winkelwagen&amp;pAdd=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>"> <img src="media/add.png" alt="+1" height="30" width="30" /> </a>
+                      <a href="?winkelwagen&amp;pRemove=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>"> <img src="media/delete.png" alt="-1" height="30" width="30" /> </a> </td>
                     <td>&euro; <?= $product->getPrijs() * $_SESSION['winkelwagen'][$i]['aantal']; ?> </td>
-                    <td><a href="?winkelwagen&amp;removeID=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>" title="Verwijder <?= $product->getProductNaam(); ?> uit je winkelwagentje">Verwijder</a> </td>
+                    <td><a href="?winkelwagen&amp;removeID=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>" title="Verwijder <?= $product->getProductNaam(); ?> uit je winkelwagentje">
+                    <img src="media/remove.jpg" alt="-1" height="50" width="55" />
+                    </a> </td>
                 </tr>
                 <?php
                 }

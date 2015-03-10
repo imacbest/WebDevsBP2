@@ -4,6 +4,7 @@
 
 
 $countError = 0;
+$msg = "";
 
 if(empty($_POST['username'])) {
     echo "Gebruikersnaam is niet ingevuld!";
