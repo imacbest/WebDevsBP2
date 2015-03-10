@@ -20,7 +20,7 @@ function checkLogin($username, $password, $db){
 }
 
 function createUser($username, $firstname, $tussenvoegsel, $lastname, $street,  $huisnummer, $postcode,
-                   $woonplaats, $email, $sexe, $password){
+                   $woonplaats, $email, $sexe, $password, $db){
     $password = hash('sha256', $password);
     $sql="INSERT INTO " ."GEBRUIKER". "([GEBRUIKERSNAAM], [VOORNAAM], [TUSSENVOEGSEL], [ACHTERNAAM],
     [STRAATNAAM], [HUISNUMMER], [POSTCODE], [WOONPLAATS], [EMAIL], [SEXE], [WACHTWOORD])

@@ -93,7 +93,7 @@ if($countError == 1) {
     echo '<a href=?nieuws title="Terug naar de beginpagina">Terug naar de beginpagina</a>';
     createUser($_POST['username'], $_POST['firstname'], $_POST['tussenvoegsel'], $_POST['lastname'],
         $_POST['street'], $_POST['houseNumber'], $_POST['zipcode'], $_POST['city'], $_POST['email'],
-        $aanhef, $_POST['password']);
+        $aanhef, $_POST['password'], $db);
 }
 
 
