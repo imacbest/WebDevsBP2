@@ -1,12 +1,3 @@
-<?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 24-2-2015
- * Time: 10:18
- */
-?>
-
 <!-- menu content -->
 <ul>
     <li><a href="?nieuws" title="Nieuws">Nieuws</a></li>
@@ -18,7 +9,15 @@
             <li><a href="?producten" title="Producten">Producten</a></li>
             <li><a href="?winkelwagen" title="Winkelwagen">Winkelwagen</a></li>
             <li><a href="?afrekenen" title="Afrekenen">Afrekenen</a></li>
-            <li><a href="?beheerWebsite" title="Website beheren">Website&nbsp;Beheren</a> </li>
+            <?php
+            if(array_key_exists('uid', $_SESSION)) {
+                if ($user->getRechten() != 1) {
+                    ?>
+                    <li><a href="?beheerWebsite" title="Website beheren">Website&nbsp;Beheren</a></li>
+                <?php
+                }
+            }
+            ?>
         </ul>
     </li>
 </ul>

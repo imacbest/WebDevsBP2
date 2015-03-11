@@ -1,10 +1,4 @@
 <?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 4-3-2015
- * Time: 9:49
- */
 include("classes/Product.class.php");
 
 if(!isset($_GET['pid'])){

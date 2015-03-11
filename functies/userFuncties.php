@@ -1,10 +1,4 @@
 <?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 6-3-2015
- * Time: 16:45
- */
 function checkLogin($username, $password, $db){
     $password = hash('sha256', $password);
     $query = "SELECT * FROM GEBRUIKER WHERE GEBRUIKERSNAAM like '".addslashes($username)."'

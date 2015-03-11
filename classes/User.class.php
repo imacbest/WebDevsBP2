@@ -1,12 +1,10 @@
 <?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 6-3-2015
- * Time: 13:09
- */
 
 class User {
+    /**
+     * User id
+     * @var int
+     */
     private $uid;
     private $username;
     private $voornaam;
@@ -19,9 +17,16 @@ class User {
     private $email;
     private $sexe;
     private $wachtwoord;
+    private $rechten;
     private $db;
 
-    public function User($uid, $conn){
+    /**
+     * constructor van de functie
+     * initaliseert alle gebruikers variabelen
+     * @param $uid user id
+     * @param $conn database connectie
+     */
+    public function __construct($uid, $conn){
         $this->conn = $conn;
         if(!empty($uid)){
             if(is_numeric($uid)){
@@ -41,13 +46,13 @@ class User {
                     $this->email = $row['EMAIL'];
                     $this->sexe = $row['SEXE'];
                     $this->wachtwoord = $row['WACHTWOORD'];
+                    $this->rechten = $row['RECHTEN'];
                 }
 
             }
         }
 
     }
-
 
 
     public function getUsername()
@@ -104,6 +109,12 @@ class User {
     {
         return $this->uid;
     }
+
+    public function getRechten()
+    {
+        return $this->rechten;
+    }
+
 
 
 }
