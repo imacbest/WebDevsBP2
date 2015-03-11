@@ -14,7 +14,8 @@ class Page {
     }
 
     /**
-     * @return string
+     * Functie haalt de pagina op vanuit de link en geeft de goede pagina terug die wordt geïncludeerd
+     * @return pagina die opgehaald moet worden
      */
     public function getPage(){
         $page = $_SERVER['REQUEST_URI'];
@@ -34,57 +35,36 @@ class Page {
         return $this->getPath().$toPage . $this->getFileType();
     }
 
-    /**
-     * @return mixed
-     */
     public function getPath()
     {
         return $this->path;
     }
 
-       /**
-     * @return mixed
-     */
     public function getFileType()
     {
         return $this->fileType;
     }
 
-     /**
-     * @return string
-     */
     public function getErrorFile()
     {
         return $this->errorFile;
     }
 
-    /**
-     * @param string $errorFile
-     */
     public function setErrorFile($errorFile)
     {
         $this->errorFile = $errorFile;
     }
 
-    /**
-     * @return string
-     */
     public function getHome()
     {
         return $this->home;
     }
 
-    /**
-     * @param string $home
-     */
     public function setHome($home)
     {
         $this->home = $home;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCurrentPage()
     {
         return $this->currentPage;

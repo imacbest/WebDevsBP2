@@ -11,8 +11,13 @@ class Product {
     private $img;
     private $inhoud;
 
-    public function __construct($productID, $conn){
-        $this->conn = $conn;
+    /**
+     * Initialiseert de product class, en zorgt dat alle data opgehaald kan worden.
+     * @param $productID het id van het product
+     */
+    public function __construct($productID){
+        global $db;
+        $this->conn = $db;
         if(!empty($productID)) {
             if (is_numeric($productID)) {
                 $this->productNummer = $productID;

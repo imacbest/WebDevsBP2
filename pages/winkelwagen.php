@@ -9,13 +9,13 @@ if(isset($_GET['removeID'])){
 if(isset($_GET['pAdd'])){
     if(!empty($_GET['pAdd'])){
         $cart->addToCart($_GET['pAdd'], 1);
-        echo "+1";
+        echo "Het te bestellen aantal is met 1 opgehoogd (+1)";
     }
 }
 if(isset($_GET['pRemove'])){
     if(!empty($_GET['pRemove'])){
         $cart->removeAmountFromCart($_GET['pRemove'], 1);
-        echo "-1";
+        echo "Het te bestellen aantal is met 1 verlaagd (-1)";
     }
 }
 
@@ -51,7 +51,7 @@ if($cart->isCartEmpty()){
             $totalPrice = 0;
             for ($i = 0; $i < $items; $i++) {
                 if ($_SESSION['winkelwagen'][$i]['aantal'] != 0) {
-                    $product = new Product($_SESSION['winkelwagen'][$i]['productID'], $db);
+                    $product = new Product($_SESSION['winkelwagen'][$i]['productID']);
                     ?>
                 <tr>
                     <td><a href="?product&amp;pid=<?= $_SESSION['winkelwagen'][$i]['productID']; ?>" title="<?= $product->getProductNaam(); ?>"><img src="media/producten/<?= $product->getImg(); ?>" class="imgPreview" alt="Jack" height="250" /></a> </td>

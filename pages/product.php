@@ -14,7 +14,7 @@ if(!isset($_GET['pid'])){
             }
         }
 
-        $product = new Product($_GET['pid'], $db);
+        $product = new Product($_GET['pid']);
 
         // product info
 
