@@ -37,9 +37,9 @@ class Product {
                     $tsql = "SELECT * FROM PRODUCT_GERELATEERD_PRODUCT WHERE PRODUCTNUMMER = " . $productID;
                     $result = sqlsrv_query($this->conn->getConn(), $tsql, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
 
-                    if(sqlsrv_num_rows($result) <= 3 ) {
+                    if(sqlsrv_num_rows($result) <= 6 ) {
                         $i = 0;
-                        while($row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
+                        while($row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC) ){
                             $this->gerelateerdeProductenID[$i] = $row['PRODUCTNUMMER_GERELATEERD_PRODUCT'];
                             $i++;
                         }
