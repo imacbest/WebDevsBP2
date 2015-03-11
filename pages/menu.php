@@ -1,12 +1,3 @@
-<?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 24-2-2015
- * Time: 10:18
- */
-?>
-
 <!-- menu content -->
 <ul>
     <li><a href="?nieuws" title="Nieuws">Nieuws</a></li>

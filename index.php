@@ -1,11 +1,6 @@
 <?php
 session_start();
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 24-2-2015
- * Time: 9:48
- */
+
 //$_SESSION['uid'] = 1;
 require("classes/loader.php");
 if(isset($_GET['logout'])){

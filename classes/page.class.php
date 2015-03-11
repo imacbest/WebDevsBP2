@@ -1,11 +1,4 @@
 <?php
-/**
- * @author Thomas
- * @project imacbest.nl
- * @date: 17-2-2015
- * @time: 01:04
- */
-
 
 class Page {
 

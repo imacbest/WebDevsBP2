@@ -1,10 +1,4 @@
 <?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 24-2-2015
- * Time: 10:47
- */
 
 if(isset($_GET['removeID'])){
     if(!empty($_GET['removeID'])){

@@ -1,10 +1,4 @@
 <?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 27-2-2015
- * Time: 13:32
- */
 
 class Product {
     private $conn;

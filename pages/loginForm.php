@@ -1,10 +1,4 @@
 <?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 6-3-2015
- * Time: 15:35
- */
 
 ?>
 <?php

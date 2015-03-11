@@ -1,10 +1,4 @@
 <?php
-/**
- * @author Thomas
- * @project imacbest.nl
- * @date: 17-2-2015
- * @time: 01:37
- */
 require("DB.class.php");
 global $db;
 $db = new DB('(local)\sqlexpress', "WEBSHOP", "sa", "DbAp");

@@ -1,11 +1,4 @@
 <?php
-/**
- * Project: WebDevsBP2
- * User: Thomas
- * Date: 10-3-2015
- * Time: 10:49
- */
-
 class Winkelwagen {
 
 
