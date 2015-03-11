@@ -83,9 +83,8 @@ class Product {
 
     public function setVoorraad($addvoorraad)
     {
-        global $db;
         $voorraad_query = "UPDATE PRODUCT SET VOORRAAD=VOORRAAD +'" .$addvoorraad. "'WHERE PRODUCTNUMMBER= " . $this->getProductNummer();
-        sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
+        sqlsrv_query($this->conn->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
     }
 
 
