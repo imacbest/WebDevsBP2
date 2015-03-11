@@ -124,12 +124,12 @@ a{
     width: 125px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], textarea {
     border-radius: 10px;
     padding: 2px;
     padding-left:5px;
 }
-input:focus{
+input:focus, textarea:focus{
     outline: 0;
 }
 .subMenu{

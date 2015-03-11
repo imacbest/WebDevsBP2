@@ -145,4 +145,19 @@ function username_length_check($username) {
     }
     return false;
 }
+
+/**
+ * Functie om een mail te versturen
+ * @param $to email adres van de ontvanger
+ * @param $title titel van het bericht
+ * @param $message het bericht
+ */
+function sendMail($to, $title, $message){
+    $headers = 'From: mailing@drankorgel.nl' . "\r\n" .
+        'Reply-To: mailing@drankorgel.nl' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $title, $message, $headers);
+}
+
 ?>

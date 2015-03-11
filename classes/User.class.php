@@ -26,8 +26,9 @@ class User {
      * @param $uid user id
      * @param $conn database connectie
      */
-    public function __construct($uid, $conn){
-        $this->conn = $conn;
+    public function __construct($uid){
+        global $db;
+        $this->conn = $db;
         if(!empty($uid)){
             if(is_numeric($uid)){
                 $this->uid = $uid;

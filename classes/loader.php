@@ -10,7 +10,7 @@ require("User.class.php");
 if(isset($_SESSION['uid'])){
     if(!empty($_SESSION['uid'])){
         if(is_numeric($_SESSION['uid'])){
-           $user = new User($_SESSION['uid'], $db);
+           $user = new User($_SESSION['uid']);
         }else{
             echo "User id is not a number";
         }
