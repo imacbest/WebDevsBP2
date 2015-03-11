@@ -7,6 +7,10 @@
  */
 
 class User {
+    /**
+     * User id
+     * @var int
+     */
     private $uid;
     private $username;
     private $voornaam;
@@ -22,7 +26,13 @@ class User {
     private $rechten;
     private $db;
 
-    public function User($uid, $conn){
+    /**
+     * constructor van de functie
+     * initaliseert alle gebruikers variabelen
+     * @param $uid user id
+     * @param $conn database connectie
+     */
+    public function __construct($uid, $conn){
         $this->conn = $conn;
         if(!empty($uid)){
             if(is_numeric($uid)){
@@ -49,7 +59,6 @@ class User {
         }
 
     }
-
 
 
     public function getUsername()
