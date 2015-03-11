@@ -9,8 +9,8 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
     <a href="?nieuws&amp;logout=true;" title="Log uit">Log uit</a>
     <?php
 }else{ // user is niet ingelogd
-    if(isset($_POST['username']) && isset($_POST['password'])){
-        checkLogin($_POST['username'], $_POST['password'], $db);
+    if(isset($_POST['gebruikersnaam']) && isset($_POST['wachtwoord'])){
+        checkLogin($_POST['gebruikersnaam'], $_POST['wachtwoord'], $db);
     }else{
 
 
@@ -24,8 +24,8 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
                 <td>Wachtwoord</td>
             </tr>
             <tr>
-                <td><input type="text" name="username" title="username" placeholder="Gebruikersnaam" /> </td>
-                <td><input type="password" name="password" title="password" placeholder="Wachtwoord" /></td>
+                <td><input type="text" name="gebruikersnaam" title="username" placeholder="Gebruikersnaam" /> </td>
+                <td><input type="password" name="wachtwoord" title="password" placeholder="Wachtwoord" /></td>
             </tr>
         </table>
         <input type="checkbox" name="remember" title="remember" /> Onthouden
