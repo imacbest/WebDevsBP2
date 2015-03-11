@@ -25,7 +25,7 @@ if(empty($_POST['password2'])) {
 }
 // Checkt of het ingevoerde wachtwoord en herhaalde wachtwoord hetzelfde is
 
-if($_POST['password'] != $_POST['password2']) {
+else if($_POST['password'] != $_POST['password2']) {
     $msg .= "Het wachtwoord en het herhaalde wachtwoord corresponderen niet!<br />";
     $countError++;
 }
