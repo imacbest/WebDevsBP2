@@ -19,6 +19,15 @@ function checkLogin($username, $password){
         echo "Gebruiker is niet gevonden";
     }
 }
+function checkIfUserIsAdmin(){
+    global $user;
+    if(array_key_exists('uid', $_SESSION)) {
+        if ($user->getRechten() != 1) {
+            return true;
+        }
+    }
+    return false;
+}
 
 /**
  * Voegt een nieuwe gebruiker toe aan de database

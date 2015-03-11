@@ -10,12 +10,11 @@
             <li><a href="?winkelwagen" title="Winkelwagen">Winkelwagen</a></li>
             <li><a href="?afrekenen" title="Afrekenen">Afrekenen</a></li>
             <?php
-            if(array_key_exists('uid', $_SESSION)) {
-                if ($user->getRechten() != 1) {
+            if(checkIfUserIsAdmin()){
                     ?>
                     <li><a href="?beheerWebsite" title="Website beheren">Website&nbsp;Beheren</a></li>
                 <?php
-                }
+
             }
             ?>
         </ul>
