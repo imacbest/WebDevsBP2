@@ -3,19 +3,6 @@
 $countError = 0;
 $check = false;
 
-
-$password = $_POST['password'];
-$aanhef = $_POST['aanhef'];
-$firstname = $_POST['firstname'];
-$tussenvoegsel = $_POST['tussenvoegsel'];
-$lastname = $_POST['lastname'];
-$email = $_POST['email'];
-$street = $_POST['street'];
-$houseNumber = $_POST['houseNumber'];
-$zipcode = $_POST['zipcode'];
-$city = $_POST['city'];
-$phonenumber = $_POST['phonenumber'];
-
 $countError = 0;
 $msg = "";
 
@@ -33,6 +20,7 @@ if(empty($_POST['password2'])) {
     $msg .= "Herhaal wachtwoord is niet ingevuld!<br />";
     $countError++;
 }
+// Checkt of het ingevoerde wachtwoord en herhaalde wachtwoord hetzelfde is
 if($_POST['password'] != $_POST['password2']) {
     $msg .= "Het wachtwoord en het herhaalde wachtwoord corresponderen niet!<br />";
     $countError++;
@@ -73,7 +61,23 @@ if(empty($_POST['phonenumber'])) {
     $msg .= "Het telefoonnummer is niet ingevuld!<br />";
     $countError++;
 }
+// Checkt of het gebruiksernaam al in de database aanwezig is
+if(gebruikersnaam_check($_POST['username'])) {
+    $msg .= "De gekozen gebruikersnaam is al in gebruik!<br />";
+    $countError++;
+}
+//Checkt of het ingevoerde emailadres een geldig email adres is
+if(!email_validator($_POST['email'])) {
+    $msg .= "Er is geen geldig emailadres ingevuld!<br />";
+    $countError++;
+}
+// Checkt of het emailadres al in de database aanwezig is
+if(email_check($_POST['email'])) {
+    $msg .= "Er is al een account aangemaakt met het gekozen emailadres!<br />";
+    $countError++;
+}
 
+//Geeft het geslacht aan in de database: m of v
 if($_POST['aanhef'] == "Dhr.") {
     $aanhef = "m";
 }else if($_POST['aanhef'] == "Mvr.") {

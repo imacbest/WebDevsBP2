@@ -54,4 +54,46 @@ function logout(){
     header("Location: ?nieuws");
 }
 
+/**
+ * Checkt of het ingevoerde emailadres een geldig email adres is
+ * @param $email
+ * @return bool, false --> emailadres is niet geldig, true --> emailadres is geldig
+ */
+function email_validator($email){
+       if (eregi("^[0-9a-z]([-_.]?[0-9a-z])*@[0-9a-z]([-.]?[0-9a-z])*\\.[a-z]{2,4}$",$email)){
+        return true;
+       }
+    return false;
+}
+
+/**
+ * Checkt of het gebruikersnaam al in de database aanwezig is
+ * @param $gebruikersnaam
+ * @return bool, false --> gebruikersnaam is al bezet, true --> gebruikersnaam is nog niet bezet
+ */
+function gebruikersnaam_check($gebruikersnaam) {
+    global $db;
+    $gebruikersnaam_query = "SELECT GEBRUIKERSNAAM FROM GEBRUIKER WHERE GEBRUIKERSNAAM='" . $gebruikersnaam . "';";
+    $gebruikersnaam_sql = sqlsrv_query($db->getConn(), $gebruikersnaam_query) or die (print_r(sqlsrv_errors()));
+    if (!sqlsrv_has_rows($gebruikersnaam_sql)) {
+       return false;
+    }
+    return true;
+}
+
+
+/**
+ * Checkt of het emailadres al in de database aanwezig is
+ * @param $email
+ * @return bool, false --> emaildres is al aanwezig, true --> emailadres is nog niet aanwezig
+ */
+function email_check($email) {
+    global $db;
+    $gebruikersnaam_query = "SELECT EMAIL FROM GEBRUIKER WHERE EMAIL='" . $email . "';";
+    $gebruikersnaam_sql = sqlsrv_query($db->getConn(), $gebruikersnaam_query) or die (print_r(sqlsrv_errors()));
+    if (!sqlsrv_has_rows($gebruikersnaam_sql)) {
+        return false;
+    }
+    return true;
+}
 ?>
