@@ -19,6 +19,7 @@ class User {
     private $email;
     private $sexe;
     private $wachtwoord;
+    private $rechten;
     private $db;
 
     public function User($uid, $conn){
@@ -41,6 +42,7 @@ class User {
                     $this->email = $row['EMAIL'];
                     $this->sexe = $row['SEXE'];
                     $this->wachtwoord = $row['WACHTWOORD'];
+                    $this->rechten = $row['RECHTEN'];
                 }
 
             }
@@ -104,6 +106,12 @@ class User {
     {
         return $this->uid;
     }
+
+    public function getRechten()
+    {
+        return $this->rechten;
+    }
+
 
 
 }

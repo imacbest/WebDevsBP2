@@ -16,7 +16,6 @@ class Product {
     private $vooraad;
     private $img;
     private $inhoud;
-    private $rechten;
 
     public function __construct($productID, $conn){
         $this->conn = $conn;
@@ -34,7 +33,6 @@ class Product {
                     $this->vooraad = $row['VOORRAAD'];
                     $this->img = $row['afbeelding'];
                     $this->inhoud = $row['INHOUD'];
-
                 } else {
                     echo "Product is niet gevonden.";
                 }

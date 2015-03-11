@@ -18,7 +18,13 @@
             <li><a href="?producten" title="Producten">Producten</a></li>
             <li><a href="?winkelwagen" title="Winkelwagen">Winkelwagen</a></li>
             <li><a href="?afrekenen" title="Afrekenen">Afrekenen</a></li>
+            <?php
+            if($user->getRechten()!=1){
+            ?>
             <li><a href="?beheerWebsite" title="Website beheren">Website&nbsp;Beheren</a> </li>
+            <?php
+            }
+            ?>
         </ul>
     </li>
 </ul>
