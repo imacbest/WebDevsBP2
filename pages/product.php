@@ -27,7 +27,8 @@ if(!isset($_GET['pid'])){
         <div class="rightBlock">
 
             <b>&euro; <?=$product->getPrijs();?></b><br />
-            Inhoud: <b><?=$product->getInhoud();?> cl</b>
+            Inhoud: <b><?=$product->getInhoud();?> cl</b><br />
+            Voorraad: <b><?=$product->getVooraad();?></b>
             <p>
                 <?=$product->getOmschrijving();?>
             </p>

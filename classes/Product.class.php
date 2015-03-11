@@ -7,7 +7,7 @@ class Product {
     private $omschrijving;
     private $categorie;
     private $prijs;
-    private $vooraad;
+    private $voorraad;
     private $img;
     private $inhoud;
 
@@ -29,7 +29,7 @@ class Product {
                     $this->omschrijving =  ($row['OMSCHRIJVING']);
                     $this->categorie = $row['CATEGORIE'];
                     $this->prijs = $row['PRIJS'];
-                    $this->vooraad = $row['VOORRAAD'];
+                    $this->voorraad = $row['VOORRAAD'];
                     $this->img = $row['afbeelding'];
                     $this->inhoud = $row['INHOUD'];
                 } else {
@@ -56,9 +56,9 @@ class Product {
     }
 
 
-    public function getVooraad()
+    public function getVoorraad()
     {
-        return $this->vooraad;
+        return $this->voorraad;
     }
 
     public function getPrijs()
@@ -79,6 +79,13 @@ class Product {
     public function getProductNummer()
     {
         return $this->productNummer;
+    }
+
+    public function setVoorraad($addvoorraad)
+    {
+        global $db;
+        $voorraad_query = "UPDATE PRODUCT SET VOORRAAD=VOORRAAD +'" .$addvoorraad. "'WHERE PRODUCTNUMMBER= " . $this->getProductNummer();
+        sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
     }
 
 
