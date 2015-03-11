@@ -16,6 +16,7 @@ class Product {
     private $vooraad;
     private $img;
     private $inhoud;
+    private $rechten;
 
     public function __construct($productID, $conn){
         $this->conn = $conn;
