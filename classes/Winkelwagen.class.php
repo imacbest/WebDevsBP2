@@ -1,5 +1,5 @@
 <?php
-class Winkelwagen {
+class Winkelwagen{
 
 
     /**
@@ -47,7 +47,6 @@ class Winkelwagen {
 
     /**
      * Voegt x aantal van het product toe aan de winkelwagen
-     * @author Thomas
      * @param $productID het product id
      * @param $amount het aantal toe te voegen producten
      * @return bool
