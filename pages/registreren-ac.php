@@ -14,6 +14,9 @@ if(empty($_POST['username'])) {
 }else if(gebruikersnaam_check($_POST['username'])) {
     $msg .= "De gekozen gebruikersnaam is al in gebruik!<br />";
     $countError++;
+}else if(!username_length_check($_POST['username'])) {
+    $msg .= "Het gebruikersnaam moet langer zijn dan 5 karakters!<br />";
+    $countError++;
 }
 if(empty($_POST['password'])) {
     $msg .= "Het wachtwoord is niet ingevuld!<br />";
@@ -62,6 +65,11 @@ if(empty($_POST['houseNumber'])) {
 if(empty($_POST['zipcode'])) {
     $msg .= "De postcode is niet ingevuld!<br />";
     $countError++;
+} else if (!postcode_check($_POST['zipcode'])) {
+    $msg .= "De postcode moet er als volgt uitzien: 1234AB!<br />";
+    $countError++;
+} else {
+    $_POST['zipcode'] = postcode_check($_POST['zipcode']);
 }
 if(empty($_POST['city'])) {
     $msg .= "De plaatsnaam is niet ingevuld!<br />";
@@ -69,6 +77,9 @@ if(empty($_POST['city'])) {
 }
 if(empty($_POST['phonenumber'])) {
     $msg .= "Het telefoonnummer is niet ingevuld!<br />";
+    $countError++;
+} else if (!telefoonnummer_check($_POST['phonenumber'])) {
+    $msg .= "Het telefoonnummer mag alleen uit nummers bestaan!<br />";
     $countError++;
 }
 
@@ -94,7 +105,5 @@ if($countError == 1) {
         $_POST['street'], $_POST['houseNumber'], $_POST['zipcode'], $_POST['city'], $_POST['email'],
         $aanhef, $_POST['password'], $db);
 }
-
-
 
 ?>

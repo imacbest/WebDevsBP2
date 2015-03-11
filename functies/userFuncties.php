@@ -96,4 +96,44 @@ function email_check($email) {
     }
     return true;
 }
+
+/**
+ * Checkt of het telefoonnummer uit alleen maar cijfers bestaat
+ * @param $phonenumber
+ * @return bool
+ */
+function telefoonnummer_check($phonenumber) {
+    if(is_numeric($phonenumber)) {
+        return true;
+    }
+    return false;
+}
+
+/**
+ * Checkt of er een geldige postcode is ingevoerd en zet de postcode in een standaard formaat: 1234 ab --> 1234AB
+ * @param $zipcode
+ * @return bool|string
+ */
+function postcode_check($zipcode) {
+    $remove = str_replace(" ","", $zipcode);
+    $upper = strtoupper($remove);
+
+    if( preg_match("/^\W*[1-9]{1}[0-9]{3}\W*[a-zA-Z]{2}\W*$/",  $upper)) {
+        return $upper;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Checkt of de gebruikersnaam langer dan 5 karakters is
+ * @param $username
+ * @return bool
+ */
+function username_length_check($username) {
+    if(strlen($username) >= 5) {
+        return true;
+    }
+    return false;
+}
 ?>

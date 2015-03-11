@@ -39,7 +39,7 @@ if(!isset($_GET['pid'])){
             <br /><br />
             <p>
                 <form method="post" action="?product&amp;pid=<?=$_GET['pid'];?>">
-                Aantal <input type="number" name="aantal" min="0" value="1" /> <input type="submit" name="toevoegen" />
+                Aantal <input type="number" name="aantal" min="0" value="1" /> <input type="submit" value="Toevoegen" name="toevoegen" />
                 </form>
             </p>
 
