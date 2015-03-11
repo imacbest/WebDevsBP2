@@ -96,7 +96,7 @@ class Product {
         return $this->productNummer;
     }
 
-    public function setVoorraad($addvoorraad)
+    public function setVVoorraad($addvoorraad)
     {
         $voorraad_query = "UPDATE PRODUCT SET VOORRAAD=VOORRAAD +'" .$addvoorraad. "'WHERE PRODUCTNUMMBER= " . $this->getProductNummer();
         sqlsrv_query($this->conn->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));

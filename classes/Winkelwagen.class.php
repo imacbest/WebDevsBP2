@@ -61,7 +61,6 @@ class Winkelwagen{
                     if ($_SESSION['winkelwagen'][$i]['productID'] == $productID) {
                         $_SESSION['winkelwagen'][$i]['aantal'] += $amount;
                         return true;
-                        setVoorraad($productID, $amount);
                     }
                 }
             } else {
@@ -69,13 +68,11 @@ class Winkelwagen{
                 $_SESSION['winkelwagen'][$insertPoint]['productID'] = $productID;
                 $_SESSION['winkelwagen'][$insertPoint]['aantal'] = $amount;
                 return true;
-                setVoorraad($productID, $amount);
             }
         }else{
             $_SESSION['winkelwagen'][0]['productID'] = $productID;
             $_SESSION['winkelwagen'][0]['aantal'] = $amount;
             return true;
-            setVoorraad($productID, $amount);
         }
     }
 
