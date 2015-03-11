@@ -54,6 +54,7 @@ if($cart->isCartEmpty()){
     if (array_key_exists('winkelwagen', $_SESSION)) {
         $items = count($_SESSION['winkelwagen']);
         if ($items > 0) {
+            $totalPrice = 0;
             for ($i = 0; $i < $items; $i++) {
                 if ($_SESSION['winkelwagen'][$i]['aantal'] != 0) {
                     $product = new Product($_SESSION['winkelwagen'][$i]['productID'], $db);
@@ -71,9 +72,11 @@ if($cart->isCartEmpty()){
                     </a> </td>
                 </tr>
                 <?php
+                    $totalPrice += $product->getPrijs() * $_SESSION['winkelwagen'][$i]['aantal'];
                 }
             }
             echo "</table> ";
+            echo "Totaal prijs: " . $totalPrice;
 
         } else {
             echo "Geen items gevonden";
