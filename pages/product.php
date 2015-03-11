@@ -15,7 +15,6 @@ if(!isset($_GET['pid'])){
         }
 
         $product = new Product($_GET['pid']);
-
         // product info
 
         ?>
@@ -28,7 +27,7 @@ if(!isset($_GET['pid'])){
 
             <b>&euro; <?=$product->getPrijs();?></b><br />
             Inhoud: <b><?=$product->getInhoud();?> cl</b><br />
-            Voorraad: <b><?=$product->getVooraad();?></b>
+            Voorraad: <b><?=$product->getVoorraad();?></b>
             <p>
                 <?=$product->getOmschrijving();?>
             </p>
@@ -40,6 +39,32 @@ if(!isset($_GET['pid'])){
             </p>
 
         </div>
+        <div class="clear"></div>
+        <br />
+        <h2>Suggesties</h2>
+        <table class="productenTabel">
+            <tr>
+            <?php
+            for($i = 0; $i < sizeof($product->getGerelateerdeProductenID()); $i++){
+                $gerelateerdProduct = new Product($product->getGerelateerdeProductenID()[$i]);
+                ?>
+                <td>
+                    <a href="?product&amp;pid=<?=$gerelateerdProduct->getProductNummer();?>" title="<?=$gerelateerdProduct->getProductNaam();?>">
+                        <img src="media/producten/<?=$gerelateerdProduct->getImg();?>" alt="<?=$gerelateerdProduct->getProductNaam();?>" class="previewContainer" /><br />
+                        <?=$gerelateerdProduct->getProductNaam();?><br />
+                        &euro; <?=$gerelateerdProduct->getPrijs();?> <br /><input type="button" name="toevoegen" value="In winkelwagen" /> <br />
+                </td>
+
+
+                <?php
+            }
+            ?>
+            </tr>
+
+        </table>
+        <br /><br />
+
+
         <?php
 
 

@@ -10,6 +10,7 @@ class Product {
     private $voorraad;
     private $img;
     private $inhoud;
+    private $gerelateerdeProductenID;
 
     /**
      * Initialiseert de product class, en zorgt dat alle data opgehaald kan worden.
@@ -22,8 +23,8 @@ class Product {
             if (is_numeric($productID)) {
                 $this->productNummer = $productID;
                 $tsql = "SELECT * FROM PRODUCT WHERE PRODUCTNUMMER = " .$productID;
-                $result = sqlsrv_query($this->conn->getConn(), $tsql, null) or die(print_r(sqlsrv_errors()));
-                if(sqlsrv_has_rows ($result)){
+                $result = sqlsrv_query($this->conn->getConn(), $tsql, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
+                if(sqlsrv_num_rows($result) == 1 ){
                     $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
                     $this->productNaam = $row['PRODUCTNAAM'];
                     $this->omschrijving =  ($row['OMSCHRIJVING']);
@@ -32,8 +33,21 @@ class Product {
                     $this->voorraad = $row['VOORRAAD'];
                     $this->img = $row['afbeelding'];
                     $this->inhoud = $row['INHOUD'];
+
+                    $tsql = "SELECT * FROM PRODUCT_GERELATEERD_PRODUCT WHERE PRODUCTNUMMER = " . $productID;
+                    $result = sqlsrv_query($this->conn->getConn(), $tsql, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
+
+                    if(sqlsrv_num_rows($result) <= 3 ) {
+                        $i = 0;
+                        while($row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
+                            $this->gerelateerdeProductenID[$i] = $row['PRODUCTNUMMER_GERELATEERD_PRODUCT'];
+                            $i++;
+                        }
+                    }
+
+                    return true;
                 } else {
-                    echo "Product is niet gevonden.";
+                    echo "Er is iets fout gegeaan, waarschijnlijk is het product niet gevonden.";
                 }
             }else{
                 echo "Opgegeven product id is geen nummer";
@@ -41,6 +55,7 @@ class Product {
         }else{
             echo "SQL Error: product id niet valide.";
         }
+        return die();
     }
 
     public function getProductNaam(){
@@ -86,6 +101,12 @@ class Product {
         $voorraad_query = "UPDATE PRODUCT SET VOORRAAD=VOORRAAD +'" .$addvoorraad. "'WHERE PRODUCTNUMMBER= " . $this->getProductNummer();
         sqlsrv_query($this->conn->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
     }
+
+    public function getGerelateerdeProductenID()
+    {
+        return $this->gerelateerdeProductenID;
+    }
+
 
 
 
