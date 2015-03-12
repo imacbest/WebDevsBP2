@@ -19,5 +19,6 @@
                 <input type="password" name="passwordNew2" placeholder="Herhaal nieuw wachtwoord" /><br />
                 <input type="submit" name="Opslaan" value="Opslaan"/>
             </td>
+        </tr>
     </table>
 </form>

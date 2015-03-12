@@ -7,8 +7,15 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
 
     Welkom <?=$user->getVoornaam(). " " .$user->getAchternaam();?> <br />
     <a href="?nieuws&amp;logout=true;" title="Log uit">Log uit</a> <br /> <br />
-    <a href="?userinfo&amp;" title="Bekijk/wijzig u persoonsgegevens">Bekijk/wijzig u persoonsgegevens</a> <br />
-    <a href="?userinfoWachtwoord&amp;" title="Wijzig u wachtwoord">Wijzig u wachtwoord</a>
+    <a href="?userinfo" title="Bekijk/wijzig u persoonsgegevens">Bekijk/wijzig u persoonsgegevens</a> <br />
+    <a href="?userinfoWachtwoord" title="Wijzig u wachtwoord">Wijzig u wachtwoord</a>
+   <?php
+    if(checkIfUserIsAdmin()) {
+        ?>
+        <br /><br />  <a href="?adminProducts" title="Beheer producten">Beheer producten</a>;
+    <?php
+    }
+?>
     <?php
 }else{ // user is niet ingelogd
     if(isset($_POST['gebruikersnaam']) && isset($_POST['wachtwoord'])){
@@ -40,4 +47,3 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
     }
 }
 ?>
-
