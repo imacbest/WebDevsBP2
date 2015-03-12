@@ -5,8 +5,10 @@
 if(isset($_SESSION['uid'])){ // user is ingelogd
     ?>
 
-    Welkom <?=$user->getVoornaam(). " " .$user->getAchternaam();?>
-    <a href="?nieuws&amp;logout=true;" title="Log uit">Log uit</a>
+    Welkom <?=$user->getVoornaam(). " " .$user->getAchternaam();?> <br />
+    <a href="?nieuws&amp;logout=true;" title="Log uit">Log uit</a> <br /> <br />
+    <a href="?userinfo&amp;" title="Bekijk/wijzig u persoonsgegevens">Bekijk/wijzig u persoonsgegevens</a> <br />
+    <a href="?userinfoWachtwoord&amp;" title="Wijzig u wachtwoord">Wijzig u wachtwoord</a>
     <?php
 }else{ // user is niet ingelogd
     if(isset($_POST['gebruikersnaam']) && isset($_POST['wachtwoord'])){

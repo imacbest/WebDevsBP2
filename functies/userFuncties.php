@@ -40,20 +40,56 @@ function checkIfUserIsAdmin(){
  * @param $postcode postcode
  * @param $woonplaats woonplaats
  * @param $email email adres
+ * @param $phonenumber telefoonnummer
  * @param $sexe geslacht
  * @param $password wachtwoord
  */
 function createUser($username, $firstname, $tussenvoegsel, $lastname, $street,  $huisnummer, $postcode,
-                   $woonplaats, $email, $sexe, $password){
+                   $woonplaats, $email, $phonenumber, $sexe, $password){
     global $db;
     $password = hash('sha256', $password);
     $sql="INSERT INTO GEBRUIKER ([GEBRUIKERSNAAM], [VOORNAAM], [TUSSENVOEGSEL], [ACHTERNAAM],
-    [STRAATNAAM], [HUISNUMMER], [POSTCODE], [WOONPLAATS], [EMAIL], [SEXE], [WACHTWOORD])
+    [STRAATNAAM], [HUISNUMMER], [POSTCODE], [WOONPLAATS], [EMAIL], [TELEFOONNUMMER], [SEXE], [WACHTWOORD])
     VALUES('".addslashes($username)."', '".addslashes($firstname)."', '".addslashes($tussenvoegsel)."','".addslashes($lastname)."', '".addslashes($street)."', '".addslashes($huisnummer)."',
-    '".addslashes($postcode)."', '".addslashes($woonplaats)."', '".addslashes($email)."', '".addslashes($sexe)."', '".$password."')";
+    '".addslashes($postcode)."', '".addslashes($woonplaats)."', '".addslashes($email)."', '".addslashes($phonenumber)."' , '".addslashes($sexe)."', '".$password."')";
     sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
 
 }
+
+/**
+ * Update de persoonsgegevens van de gebruiker
+ ** @param $username gebruikersnaam
+ * @param $firstname voornaam
+ * @param $tussenvoegsel tussenvoegsel
+ * @param $lastname achternaam
+ * @param $street straat
+ * @param $huisnummer huisernummer
+ * @param $postcode postcode
+ * @param $woonplaats woonplaats
+ * @param $email email adres
+ * @param $phonenumber telefoonnummer
+ * @param $sexe geslacht
+ */
+function updateUser($username, $firstname, $tussenvoegsel, $lastname, $street,  $huisnummer, $postcode,
+                    $woonplaats, $email, $phonenumber, $sexe)
+{
+    global $db;
+    $sql = "UPDATE GEBRUIKER SET [VOORNAAM] = '" . addslashes($firstname) . "',
+    [TUSSENVOEGSEL] = '" . addslashes($tussenvoegsel) . "', [ACHTERNAAM] = '" . addslashes($lastname) . "', [STRAATNAAM] = '" . addslashes($street) . "',
+    [HUISNUMMER] = '" . addslashes($huisnummer) . "', [POSTCODE] = '" . addslashes($postcode) . "', [WOONPLAATS] = '" . addslashes($woonplaats) . "',
+    [EMAIL] = '" . addslashes($email) . "', [TELEFOONNUMMER] = '" . addslashes($phonenumber) . "', [SEXE] = '" . addslashes($sexe) . "'
+    WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "')";
+    sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
+}
+
+function updateWachtwoord($password, $username)
+{
+    $password = hash('sha256', $password);
+    global $db;
+    $sql = "UPDATE GEBRUIKER SET [WACHTWOORD] = '" . addslashes($password) . "' WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "')";
+    sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
+}
+
 
 /**
  *  Logt de gebruiker uit en vernietigd de sessie, gebruiker wordt verolgends naar ?nieuws gestuurd

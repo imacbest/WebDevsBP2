@@ -15,6 +15,7 @@ class User {
     private $postcode;
     private $woonplaats;
     private $email;
+    private $phonenumber;
     private $sexe;
     private $wachtwoord;
     private $rechten;
@@ -45,6 +46,7 @@ class User {
                     $this->postcode = $row['POSTCODE'];
                     $this->woonplaats = $row['WOONPLAATS'];
                     $this->email = $row['EMAIL'];
+                    $this->phonenumber = $row['TELEFOONNUMMER'];
                     $this->sexe = $row['SEXE'];
                     $this->wachtwoord = $row['WACHTWOORD'];
                     $this->rechten = $row['RECHTEN'];
@@ -101,6 +103,11 @@ class User {
         return $this->email;
     }
 
+    public function getPhonenumber()
+    {
+        return $this->phonenumber;
+    }
+
     public function getSexe()
     {
         return $this->sexe;
@@ -114,6 +121,11 @@ class User {
     public function getRechten()
     {
         return $this->rechten;
+    }
+
+    public function getWachtwoord()
+    {
+        return $this->wachtwoord;
     }
 
 

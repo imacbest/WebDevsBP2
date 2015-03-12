@@ -10,23 +10,9 @@ if(empty($_POST['username'])) {
     $countError++;
 }else if(gebruikersnaam_check($_POST['username'])) {
     $msg .= "De gekozen gebruikersnaam is al in gebruik!<br />";
-    $countError++;
+    //$countError++;
 }else if(!username_length_check($_POST['username'])) {
     $msg .= "Het gebruikersnaam moet langer zijn dan 5 karakters!<br />";
-    $countError++;
-}
-if(empty($_POST['password'])) {
-    $msg .= "Het wachtwoord is niet ingevuld!<br />";
-    $countError++;
-}
-if(empty($_POST['password2'])) {
-    $msg .= "Het herhaalde wachtwoord is niet ingevuld!<br />";
-    $countError++;
-}
-// Checkt of het ingevoerde wachtwoord en herhaalde wachtwoord hetzelfde is
-
-else if($_POST['password'] != $_POST['password2']) {
-    $msg .= "Het wachtwoord en het herhaalde wachtwoord corresponderen niet!<br />";
     $countError++;
 }
 if(empty($_POST['aanhef'])) {
@@ -49,7 +35,7 @@ if(empty($_POST['email'])) {
     $countError++;
 }else if(email_check($_POST['email'])) {
     $msg .= "Er is al een account aangemaakt met het gekozen emailadres!<br />";
-    $countError++;
+    //$countError++;
 }
 if(empty($_POST['street'])) {
     $msg .= "De straatnaam is niet ingevuld!<br />";
@@ -91,16 +77,16 @@ echo $msg;
 
 if($countError == 1) {
     echo "<br ?>Er is ".$countError." fout gevonden!<br />";
-    echo '<a href=?registreren title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
+    echo '<a href=?userinfo title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
 }else if($countError != 0) {
     echo "<br ?>Er zijn in totaal " . $countError . " fouten gevonden!<br />";
-    echo '<a href=?registreren title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
+    echo '<a href=?userinfo title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
 }else if($countError == 0) {
-    echo "U bent succesvol geregistreerd! Bevestig u registratie via de link in u e-mail.";
+    echo "U gegevens zijn succesvol gewijzigd!";
     echo '<a href=?nieuws title="Terug naar de beginpagina">Terug naar de beginpagina</a>';
-    createUser($_POST['username'], $_POST['firstname'], $_POST['tussenvoegsel'], $_POST['lastname'],
+    updateUser($_POST['username'], $_POST['firstname'], $_POST['tussenvoegsel'], $_POST['lastname'],
         $_POST['street'], $_POST['houseNumber'], $_POST['zipcode'], $_POST['city'], $_POST['email'], $_POST['phonenumber'],
-        $aanhef, $_POST['password']);
+        $aanhef);
 }
 
 ?>

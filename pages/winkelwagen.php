@@ -70,7 +70,8 @@ if($cart->isCartEmpty()){
                 }
             }
             echo "</table> ";
-            echo "Totaal prijs: " . $totalPrice;
+            echo "Totaal prijs: &euro;" . $totalPrice;
+           // echo <a href="setVoorraad(1,1)">Visit our HTML tutorial</a>;
 
         } else {
             echo "Geen items gevonden";
