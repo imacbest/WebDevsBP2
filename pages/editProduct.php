@@ -14,7 +14,13 @@ if(!empty($_GET['pid'])) {
     $check = false;
     $msg = "";
 
-    if (!empty($_POST['Productnaam'])) {
+    if(!empty($_POST['verwijderProduct'])) {
+        $check = true;
+        deleteProduct($_POST['verwijderProduct']);
+        echo "Het product " .$_POST['verwijderProduct']." is succesvol verwijderd!";
+    }
+
+    else if (!empty($_POST['Productnaam'])) {
 
         if (empty($_POST['Productnaam'])) {
             $msg .= "Productnaam is niet ingevuld!<br />";
@@ -66,7 +72,7 @@ if(!empty($_GET['pid'])) {
                 $_POST['Voorraad'], $_POST['Inhoud'], $_POST['Afbeelding']);
         }
         ?>
-        <br/>
+        <br/> <br/><br/>
     <?php
     } if ($check == false) {
         ?>
@@ -77,7 +83,7 @@ if(!empty($_GET['pid'])) {
                                       value="<?= $product->getProductNaam(); ?>" readonly><br/><br/>
         Productnaam: * <br/> <input type="text" name="Productnaam" placeholder="Productnaam"
                                     value="<?= $product->getProductNaam(); ?>"><br/><br/>
-        Omschrijving: * <br/><textarea name="Omschrijving" rows="10" cols="75"
+        Omschrijving: (langer dan 10 karakters)* <br/><textarea name="Omschrijving" rows="8" cols="75"
                                        placeholder="Omschrijving"><?= $product->getOmschrijving(); ?></textarea><br/>
         Categorie: *
         <select name="Categorie" value="<?= $product->getCategorie(); ?>">
@@ -101,17 +107,27 @@ if(!empty($_GET['pid'])) {
         <br/><br/>
 
 
-        Prijs: * <br/> &euro; <input type="text" name="Prijs" placeholder="Prijs"
+        Prijs: * <br/> &euro; <input type="text" name="Prijs" placeholder="Prijs (9.99)"
                                      value="<?= $product->getPrijs(); ?>"><br/><br/>
-        Voorraad: * <br/> <input type="text" name="Voorraad" placeholder="Voorraad"
+        Voorraad: * <br/> <input type="text" name="Voorraad" placeholder="Voorraad (25)"
                                  value="<?= $product->getVoorraad(); ?>"> stuks<br/><br/>
-        Inhoud: * <br/> <input type="text" name="Inhoud" placeholder="Inhoud" value="<?= $product->getInhoud(); ?>">
+        Inhoud: * <br/> <input type="text" name="Inhoud" placeholder="Inhoud (125)" value="<?= $product->getInhoud(); ?>">
         cl<br/><br/>
-        Afbeelding(locatie): * <br/> <input type="text" name="Afbeelding" placeholder="Afbeelding"
+        Afbeelding(locatie): * <br/> <input type="text" name="Afbeelding" placeholder="Afbeelding (fles.png)"
                                             value="<?= $product->getImg(); ?>"><br/><br/>
 
         <input type="submit" name="Opslaan" value="Opslaan"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button" onclick="deleteProduct()">Product verwijderen</button><br/><br/><br/><br/>
+        </form>
+        <br/><br/>
+        <form name="deleteProduct" method="post">
+            <input type="submit" name="Verwijder het product:" value="Verwijder het product:"/>
+            <input type="text" name="verwijderProduct" placeholder="Productnaam"
+                                          value="<?= $product->getProductNaam(); ?>" readonly>
+
+
+        </form>
+        <br/><br/>
+
 
 
 

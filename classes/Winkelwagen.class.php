@@ -72,14 +72,11 @@ class Winkelwagen{
                     }
                 }
             } else {
-<<<<<<< HEAD
                 $_SESSION['winkelwagen'][0]['productID'] = $productID;
                 $_SESSION['winkelwagen'][0]['aantal'] = $amount;
-=======
                 $insertPoint = max(array_keys($_SESSION['winkelwagen'])) + 1;
                 $_SESSION['winkelwagen'][$insertPoint]['productID'] = $productID;
                 $_SESSION['winkelwagen'][$insertPoint]['aantal'] = $amount;
->>>>>>> 5a496053edef05c1481d467836e525a1dbc70ff3
                 return true;
             }
         } else {

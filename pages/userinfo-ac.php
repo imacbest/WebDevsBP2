@@ -8,12 +8,6 @@ $msg = "";
 if(empty($_POST['username'])) {
     $msg .= "Gebruikersnaam is niet ingevuld!<br />";
     $countError++;
-}else if(gebruikersnaam_check($_POST['username'])) {
-    $msg .= "De gekozen gebruikersnaam is al in gebruik!<br />";
-    //$countError++;
-}else if(!username_length_check($_POST['username'])) {
-    $msg .= "Het gebruikersnaam moet langer zijn dan 5 karakters!<br />";
-    $countError++;
 }
 if(empty($_POST['aanhef'])) {
     $msg .= "Aanhef is niet ingevuld!<br />";
@@ -33,9 +27,6 @@ if(empty($_POST['email'])) {
 }else if(!email_validator($_POST['email'])) {
     $msg .= "Er is geen geldig emailadres ingevuld!<br />";
     $countError++;
-}else if(email_check($_POST['email'])) {
-    $msg .= "Er is al een account aangemaakt met het gekozen emailadres!<br />";
-    //$countError++;
 }
 if(empty($_POST['street'])) {
     $msg .= "De straatnaam is niet ingevuld!<br />";
