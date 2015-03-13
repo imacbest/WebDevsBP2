@@ -8,12 +8,14 @@ Productnaam: * <br /> <input type="text" name="Productnaam" placeholder="Product
 Omschrijving: * <br /><textarea name="Omschrijving" rows="5" cols="40" placeholder="Omschrijving" ></textarea><br />
 Categorie: *
     <select name="Categorie">
-        <option value="Bier">Bier</option>
-        <option value="Likeuren">Likeuren</option>
-        <option value="Mixen">Mixen</option>
-        <option value="Rum">Rum</option>
-        <option value="Wijn">Wijn</option>
-        <option value="Whisky">Whisky</option></select>
+        <?php
+        $query = "SELECT * FROM CATEGORIE";
+        $result = sqlsrv_query($db->getConn(),$query, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
+        while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
+            echo "<option value='".$row['CATEGORIENAAM']."'>".$row['CATEGORIENAAM']."</option>";
+        }
+        ?>
+    </select>
 <br /><br />
 
 

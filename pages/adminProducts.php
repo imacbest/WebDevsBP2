@@ -40,8 +40,7 @@
 
     while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
         echo "<div class=\"product\">";
-        echo "  <a href='?product&pid=".$row['PRODUCTNUMMER']."' title='".$row['PRODUCTNAAM']."'>
-                            <img height=\"150\" src='media/producten/".$row['afbeelding']."' alt=
+        echo "  <img height=\"150\" src='media/producten/".$row['afbeelding']."' alt=
                             '".$row['PRODUCTNAAM']."' /></a>
                         <br />".$row['PRODUCTNAAM']."<br />&euro;".$row['PRIJS']."<br />
                         <a href='?editProduct&pid=".$row['PRODUCTNUMMER']."' title='Wijzig ".$row['PRODUCTNAAM']."!'>Wijzigen</a>";

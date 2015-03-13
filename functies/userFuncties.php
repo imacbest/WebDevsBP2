@@ -80,7 +80,7 @@ function updateUser($username, $firstname, $tussenvoegsel, $lastname, $street,  
     [TUSSENVOEGSEL] = '" . addslashes($tussenvoegsel) . "', [ACHTERNAAM] = '" . addslashes($lastname) . "', [STRAATNAAM] = '" . addslashes($street) . "',
     [HUISNUMMER] = '" . addslashes($huisnummer) . "', [POSTCODE] = '" . addslashes($postcode) . "', [WOONPLAATS] = '" . addslashes($woonplaats) . "',
     [EMAIL] = '" . addslashes($email) . "', [TELEFOONNUMMER] = '" . addslashes($phonenumber) . "', [SEXE] = '" . addslashes($sexe) . "'
-    WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "')";
+    WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "'";
     sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
 }
 
@@ -88,7 +88,7 @@ function updateWachtwoord($password, $username)
 {
     $password = hash('sha256', $password);
     global $db;
-    $sql = "UPDATE GEBRUIKER SET [WACHTWOORD] = '" . addslashes($password) . "' WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "')";
+    $sql = "UPDATE GEBRUIKER SET [WACHTWOORD] = '" . addslashes($password) . "' WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "'";
     sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
 }
 

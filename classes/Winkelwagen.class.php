@@ -3,16 +3,6 @@ class Winkelwagen{
 
 
 
-    public function setVoorraad($productID, $addvoorraad) {
-        global $db;
-        $voorraad_query = "UPDATE PRODUCT SET VOORRAAD = VOORRAAD - '".$addvoorraad."' WHERE PRODUCTNUMMER= '" .$productID. "';";
-        sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
-        return true;
-    }
-
-
-
-
     /**
      * Functie om een X aantal van een product uit het winkelwagentje te halen
      * @param $productID product nummer

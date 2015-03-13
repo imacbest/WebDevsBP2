@@ -26,5 +26,15 @@ function createProduct($productnaam, $omschrijving, $categorie, $prijs, $voorraa
     sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
 }
 
+function updateProduct($productnaamHuidig, $productnaam, $omschrijving, $categorie, $prijs, $voorraad,  $inhoud, $afbeelding)
+{
+    global $db;
+    $sql = "UPDATE PRODUCT SET [PRODUCTNAAM] = '" . addslashes($productnaam) . "', [OMSCHRIJVING] = '" . addslashes($omschrijving) . "',
+     [CATEGORIE] = '" . addslashes($categorie) . "', [PRIJS] = '" . addslashes($prijs) . "',
+     [VOORRAAD] = '" . addslashes($voorraad) . "', [INHOUD] = '" . addslashes($inhoud) . "',
+     [afbeelding] = '" . addslashes($afbeelding) . "' WHERE [PRODUCTNAAM] = '" . addslashes($productnaamHuidig) . "'";
+    sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
+}
+
 
 ?>

@@ -19,6 +19,9 @@ if(empty($_POST['Productnaam'])) {
 if(empty($_POST['Omschrijving'])) {
     $msg .= "Omschrijving is niet ingevuld!<br />";
     $countError++;
+} else if(strlen($_POST['Omschrijving']) < 10) {
+    $msg .= "Omschrijving moet langer zijn dan 10 karakters!<br />";
+    $countError++;
 }
 if(empty($_POST['Categorie'])) {
     $msg .= "Catergorie is niet ingevuld!<br />";
@@ -60,7 +63,7 @@ if($countError == 1) {
 }else if($countError == 0) {
     echo "Het product is succesvol toegevoegd!";
     echo '<a href=?adminProducts title="Terug naar de beheerpagina">Terug naar de beheerpagina</a>';
-    createProduct($_POST['Productnaam'], $_POST['Omschrijving'], $_POST['Categorie'], $_POST['Prijs'],
+    updateProduct($_POST['Productnaam'], $_POST['Omschrijving'], $_POST['Categorie'], $_POST['Prijs'],
         $_POST['Voorraad'], $_POST['Inhoud'], $_POST['Afbeelding']);
 }
 ?>
