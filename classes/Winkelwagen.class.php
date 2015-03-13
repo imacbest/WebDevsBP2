@@ -18,9 +18,6 @@ class Winkelwagen{
                 if ($_SESSION['winkelwagen'][$i]['productID'] == $productID) {
                     if ($_SESSION['winkelwagen'][$i]['aantal'] >= $amount) {
                         $_SESSION['winkelwagen'][$i]['aantal'] -= $amount;
-                        global $db;
-                        $voorraad_query = "UPDATE PRODUCT SET VOORRAAD = VOORRAAD + '".$amount."' WHERE PRODUCTNUMMER= '" .$productID. "';";
-                        sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
                         return true;
                     }else{
                         $_SESSION['winkelwagen'][$i]['aantal'] = 0;
@@ -45,9 +42,6 @@ class Winkelwagen{
                 $amount = $_SESSION['winkelwagen'][$i]['productID'];
                 echo $amount;
                 if ($_SESSION['winkelwagen'][$i]['productID'] == $productID) {
-                    global $db;
-                    $voorraad_query = "UPDATE PRODUCT SET VOORRAAD = VOORRAAD + '".$amount."' WHERE PRODUCTNUMMER= '" .$productID. "';";
-                    sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
                     $_SESSION['winkelwagen'][$i]['aantal'] = 0;
                 }
             }
@@ -74,9 +68,6 @@ class Winkelwagen{
                     for ($i = 0; $i < count($_SESSION['winkelwagen']); $i++) {
                         if ($_SESSION['winkelwagen'][$i]['productID'] == $productID) {
                             $_SESSION['winkelwagen'][$i]['aantal'] += $amount;
-                            global $db;
-                            $voorraad_query = "UPDATE PRODUCT SET VOORRAAD = VOORRAAD - '" . $amount . "' WHERE PRODUCTNUMMER= '" . $productID . "';";
-                            sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
                             return true;
                         }
                     }
@@ -84,9 +75,6 @@ class Winkelwagen{
                     $insertPoint = max(array_keys($_SESSION['winkelwagen'])) + 1;
                     $_SESSION['winkelwagen'][$insertPoint]['productID'] = $productID;
                     $_SESSION['winkelwagen'][$insertPoint]['aantal'] = $amount;
-                    global $db;
-                    $voorraad_query = "UPDATE PRODUCT SET VOORRAAD = VOORRAAD - '" . $amount . "' WHERE PRODUCTNUMMER= '" . $productID . "';";
-                    sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
                     return true;
                 }
             } else {
