@@ -44,7 +44,7 @@
                             <img height=\"150\" src='media/producten/".$row['afbeelding']."' alt=
                             '".$row['PRODUCTNAAM']."' /></a>
                         <br />".$row['PRODUCTNAAM']."<br />&euro;".$row['PRIJS']."<br />
-                        <a href='?adminProductsEdit&pEdit=".$row['PRODUCTNUMMER']."' title='Wijzig ".$row['PRODUCTNAAM']."!'>Wijzigen</a>";
+                        <a href='?editProduct&pid=".$row['PRODUCTNUMMER']."' title='Wijzig ".$row['PRODUCTNAAM']."!'>Wijzigen</a>";
         echo "</div>";
     }
     sqlsrv_free_stmt($result);

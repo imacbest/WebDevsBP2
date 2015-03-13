@@ -27,4 +27,5 @@ function createProduct($productnaam, $omschrijving, $categorie, $prijs, $voorraa
 
 }
 
+
 ?>

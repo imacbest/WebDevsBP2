@@ -101,6 +101,12 @@ class Product {
         return $this->gerelateerdeProductenID;
     }
 
+    function setVoorraad($productID, $amount) {
+        global $db;
+        $voorraad_query = "UPDATE PRODUCT SET VOORRAAD = VOORRAAD + '".$amount."' WHERE PRODUCTNUMMER= '" .$productID. "';";
+        sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
+    }
+
 
 
 
