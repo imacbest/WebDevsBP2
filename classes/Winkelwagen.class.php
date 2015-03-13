@@ -1,7 +1,7 @@
 <?php
 class Winkelwagen{
 
-
+    private $productID;
 
     /**
      * Functie om een X aantal van een product uit het winkelwagentje te halen
@@ -56,13 +56,18 @@ class Winkelwagen{
      */
     public function addToCart($productID, $amount)
     {
+        $this->productID = $productID;
         if (!is_numeric($productID) && !is_numeric($productID)) {
             return false;
         }
-        //$this->setVoorraad(9,1);
-        //$voorraad = $Product->getVoorraad();
-        //echo $voorraad;
-        //if ($amount < $voorraad) {
+        $inCart = 0;
+        if ($this->checkIfProductInCart($this->productID)) {
+            $inCart = $_SESSION['winkelwagen'][$this->getI($productID)]['aantal'];
+        }
+        if ($amount + $inCart > $this->voldoendeVoorraad()) {
+            $amount = $amount + $this->voldoendeVoorraad() - $_SESSION['winkelwagen'][$this->getI($productID)]['aantal'];
+        }
+
         if (array_key_exists('winkelwagen', $_SESSION)) {
             if ($this->checkIfProductInCart($productID)) {
                 for ($i = 0; $i < count($_SESSION['winkelwagen']); $i++) {
@@ -85,11 +90,8 @@ class Winkelwagen{
             sqlsrv_query($db->getConn(), $voorraad_query, NULL) or die (print_r(sqlsrv_errors()));
             return true;
         }
-
-        //} else {
-        //echo "De door u gekozen producten zijn niet genoeg in voorraad! In totaal zijn er: " + $voorraad + " in voorraad.";
-        //}
     }
+
 
     /**
      * checkt of het product al in het winkelwagentje zit
@@ -138,17 +140,15 @@ class Winkelwagen{
     /**
      * functie die checkt of een product wel in voorraad is,
      * @param $productID
-     * @return bool
+     * @return int voorraad
      */
-    public function voldoendeVoorraad($productID){
+    public function voldoendeVoorraad(){
         global $db;
-        $query = "SELECT * FROM PRODUCT WHERE PRODUCTNUMMER = " . $productID;
+        $query = "SELECT * FROM PRODUCT WHERE productnummer = '" . $this->productID . "'";
         $result = sqlsrv_query($db->getConn(), $query, null) or die(print_r(sqlsrv_errors()));
         if(sqlsrv_has_rows ($result)) {
             $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
-            if($row['VOORRAAD'] >= $_SESSION['winkelwagen'][$this->getI($productID)]['aantal']){
-                return true;
-            }
+            return $row['VOORRAAD'];
         }
         return false;
     }
