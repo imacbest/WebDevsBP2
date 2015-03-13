@@ -15,7 +15,16 @@ if(!empty($_GET['pid'])) {
         $query = "SELECT * FROM CATEGORIE";
         $result = sqlsrv_query($db->getConn(),$query, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
         while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
-            echo "<option value='".$row['CATEGORIENAAM']."'>".$row['CATEGORIENAAM']."</option>";
+            echo "<option value='";
+            echo $row['CATEGORIENAAM'];
+            echo "' ";
+            if($row['CATEGORIENAAM'] == $product->getCategorie()){
+                echo " selected='selected' ";
+            }
+
+            echo " > ";
+            echo $row['CATEGORIENAAM'];
+            echo "</option>";
         }
         ?>
     </select>
