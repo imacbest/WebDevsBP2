@@ -24,7 +24,6 @@ function createProduct($productnaam, $omschrijving, $categorie, $prijs, $voorraa
     VALUES('".addslashes($productnaam)."', '".addslashes($omschrijving)."', '".addslashes($categorie)."','".addslashes($prijs)."', '".addslashes($voorraad)."',
     '".addslashes($inhoud)."', '".addslashes($afbeelding)."')";
     sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
-
 }
 
 

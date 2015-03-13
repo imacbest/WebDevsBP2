@@ -8,26 +8,17 @@ if(!empty($_GET['pid'])) {
 
 <form name="addProduct" method="post" action="?addProduct-ac">
     Productnaam: * <br /> <input type="text" name="Productnaam" placeholder="Productnaam" value="<?=$product->getProductNaam();?>"><br /><br />
-    Omschrijving: * <br /><textarea name="Omschrijving" rows="5" cols="40" placeholder="Omschrijving"  ></textarea value="<?=$product->getOmschrijving();?>"><br />
+    Omschrijving: * <br /><textarea name="Omschrijving" rows="5" cols="40" placeholder="Omschrijving"><?=$product->getOmschrijving();?></textarea><br />
     Categorie: *
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Bier") echo "checked";?>
-           value="Bier">Bier
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Likeuren") echo "checked";?>
-           value="Likeuren">Likeuren
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Mixen") echo "checked";?>
-           value="Mixen">Mixen
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Rum") echo "checked";?>
-           value="Rum">Rum
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Wijn") echo "checked";?>
-           value="Wijn">Wijn
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Whisky") echo "checked";?>
-           value="Whisky">Whisky
+    <select name="Categorie" value="<?=$product->getCategorie();?>">
+        <?php
+        $query = "SELECT * FROM CATEGORIE";
+        $result = sqlsrv_query($db->getConn(), $result, null);
+        while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
+            echo "<option value='".$row['CATEGORIENAAM']."'>".$row['CATEGORIENAAM']."</option>";
+        }
+        ?>
+    </select>
     <br /><br />
 
 

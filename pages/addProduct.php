@@ -7,24 +7,13 @@
 Productnaam: * <br /> <input type="text" name="Productnaam" placeholder="Productnaam"><br /><br />
 Omschrijving: * <br /><textarea name="Omschrijving" rows="5" cols="40" placeholder="Omschrijving" ></textarea><br />
 Categorie: *
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Bier") echo "checked";?>
-           value="Bier">Bier
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Likeuren") echo "checked";?>
-           value="Likeuren">Likeuren
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Mixen") echo "checked";?>
-           value="Mixen">Mixen
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Rum") echo "checked";?>
-           value="Rum">Rum
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Wijn") echo "checked";?>
-           value="Wijn">Wijn
-    <input type="radio" name="Categorie"
-        <?php if (isset($Categorie) && $Categorie=="Whisky") echo "checked";?>
-           value="Whisky">Whisky
+    <select name="Categorie">
+        <option value="Bier">Bier</option>
+        <option value="Likeuren">Likeuren</option>
+        <option value="Mixen">Mixen</option>
+        <option value="Rum">Rum</option>
+        <option value="Wijn">Wijn</option>
+        <option value="Whisky">Whisky</option></select>
 <br /><br />
 
 
