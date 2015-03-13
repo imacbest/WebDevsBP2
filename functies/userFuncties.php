@@ -18,8 +18,9 @@ function checkLogin($username, $password){
         header("Refresh:0");
 
     }else{
-        echo "Gebruiker is niet gevonden"
-            <a href="?registreren" title="Registreer">Registreer</a>;
+        echo "Gebruiker is niet gevonden" ?>
+            <br /><a href="?registreren" title="Registreer">Registreer</a>
+<?php
     }
 }
 function checkIfUserIsAdmin(){

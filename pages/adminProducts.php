@@ -2,6 +2,7 @@
 
 ?>
 
+<img src="media/add.png" alt="+1" height="20" width="20" />
 <a href="?addProduct" title="Voeg een product toe">Voeg een product toe</a> <br />
 <h1>Producten</h1>
 <div class="subMenu">

@@ -105,10 +105,14 @@ a{
 .winkelwagen, .winkelwagen tr {
     width: 100%;
     border: black 1px solid;
+    text-align: center
 }
 .winkelwagen td{
     width: 15%;
     border: black 1px solid;
+}
+.tekstRechts{
+    text-align: center
 }
 .productenTabel table, .productenTabel tr,.productenTabel td{
     border: black 1px solid;
@@ -118,6 +122,7 @@ a{
 .productenTabel td {
     height: 225px;
     width: 250px;
+
 }
 .previewContainer{
     height: 250px;
@@ -147,6 +152,10 @@ a{
     width: 80%;
     float: right;
 }
+#gebruiksers{
+    width: 90%;
+    float: right;
+}
 .product{
     width: 160px;
     border: 2px black solid;
@@ -154,6 +163,17 @@ a{
     display: inline-block;
     padding: 2px;
     height: 250px;
+    vertical-align: bottom;
+    text-align: center;
+    box-sizing: border-box;
+}
+.gebruiker{
+    width: 300px;
+    border: 2px black solid;
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 2px;
+    height: 150px;
     vertical-align: bottom;
     text-align: center;
     box-sizing: border-box;
