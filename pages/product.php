@@ -32,6 +32,7 @@ if(!isset($_GET['pid'])){
 
             <b>&euro; <?=$product->getPrijs();?></b><br />
             Inhoud: <b><?=$product->getInhoud();?> cl</b><br />
+            Categorie: <b><?=$product->getCategorie();?></b><br />
             Voorraad: <b><?=$product->getVoorraad();?></b>
             <p>
                 <?=$product->getOmschrijving();?>

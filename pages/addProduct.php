@@ -1,5 +1,5 @@
 <?php
-
+include("functies/productFuncties.php");
 ?>
 <h1>Voeg product toe</h1>
 

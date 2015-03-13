@@ -36,5 +36,11 @@ function updateProduct($productnaamHuidig, $productnaam, $omschrijving, $categor
     sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
 }
 
+function deleteProduct() {
+                global $db;
+                $sql="DELETE FROM PRODUCT WHERE [PRODUCTNAAM] = '" . addslashes($_POST['Productnaam']) . "'";
+                sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
+}
+
 
 ?>
