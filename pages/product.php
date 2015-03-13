@@ -25,6 +25,7 @@ if(!isset($_GET['pid'])){
         ?>
 
         <h1><?=$product->getProductNaam();?></h1>
+        <h3><a href="?producten" title="Terug naar het productenoverzicht">Terug naar het productenoverzicht</a> </h3>
         <div class="imgLeft">
             <img src="media/producten/<?=$product->getImg();?>" alt="<?=$product->getProductNaam();?>" height="400" />
         </div>
