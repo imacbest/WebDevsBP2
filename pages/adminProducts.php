@@ -2,17 +2,18 @@
 
 ?>
 
+<img src="media/add.png" alt="+1" height="20" width="20" />
 <a href="?addProduct" title="Voeg een product toe">Voeg een product toe</a> <br />
 <h1>Producten</h1>
 <div class="subMenu">
     Categorien
     <ul>
-        <li><a href="?producten" title="Laat alles zien">Alles</a> </li>
+        <li><a href="?adminProducts" title="Laat alles zien">Alles</a> </li>
         <?php
         $query = "SELECT * FROM CATEGORIE";
         $result = sqlsrv_query($db->getConn(), $query) or die (print_r(sqlsrv_errors()));
         while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
-            echo "<li><a href='?producten&amp;filter=".$row['CATEGORIENAAM']."'>".$row['CATEGORIENAAM']."</a> </li>";
+            echo "<li><a href='?adminProducts&amp;filter=".$row['CATEGORIENAAM']."'>".$row['CATEGORIENAAM']."</a> </li>";
         }
         ?>
 

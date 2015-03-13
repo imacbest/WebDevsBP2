@@ -22,7 +22,7 @@
 <p>
     Solliciteer dan direct door ons te mailen
     <a href="mailto:sollicitatie@hetdrankorgel.nl">sollicitatie@hetdrankorgel.nl</a>.
-    Doe dit voor 1 maart 2015! Ook voor meer informatie over de functie kunt u
+    Doe dit voor 1 juni 2015! Ook voor meer informatie over de functie kunt u
     altijd mailen.
 </p>
 <br />
@@ -44,7 +44,7 @@
 <p>
     Solliciteer dan direct door ons te mailen
     <a href="mailto:sollicitatie@hetdrankorgel.nl">sollicitatie@hetdrankorgel.nl</a>.
-    Doe dit voor 1 maart 2015! Ook voor meer informatie over de functie kunt u
+    Doe dit voor 1 april 2015! Ook voor meer informatie over de functie kunt u
     altijd mailen.
 </p>
 <br /><br />

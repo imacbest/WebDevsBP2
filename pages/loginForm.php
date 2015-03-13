@@ -13,6 +13,7 @@ if(isset($_SESSION['uid'])){ // user is ingelogd
     if(checkIfUserIsAdmin()) {
         ?>
         <br /><br />  <a href="?adminProducts" title="Beheer producten">Beheer producten</a>
+        <br />  <a href="?adminUsers" title="Beheer gebruikers">Beheer gebruikers</a>
     <?php
     }
 ?>

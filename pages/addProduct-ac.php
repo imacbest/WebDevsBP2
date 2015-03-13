@@ -12,10 +12,10 @@ $msg = "";
 if(empty($_POST['Productnaam'])) {
     $msg .= "Productnaam is niet ingevuld!<br />";
     $countError++;
-} //else if(!productnaam_check($_POST['Productnaam'])) {
-    //$msg .= "De productnaam bestaat al!<br />";
-    //$countError++;
-//}
+} else if(!productnaam_check($_POST['Productnaam'])) {
+    $msg .= "Er bestaat al een product met deze naam!<br />";
+    $countError++;
+}
 if(empty($_POST['Omschrijving'])) {
     $msg .= "Omschrijving is niet ingevuld!<br />";
     $countError++;
@@ -56,14 +56,14 @@ echo $msg;
 
 if($countError == 1) {
     echo "<br ?>Er is ".$countError." fout gevonden!<br />";
-    echo '<a href=?addProduct title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
+    echo '<a href=?addProduct&Productnaam=.$_POST['Productnaam'].& title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
 }else if($countError != 0) {
     echo "<br ?>Er zijn in totaal " . $countError . " fouten gevonden!<br />";
     echo '<a href=?addProduct title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
 }else if($countError == 0) {
     echo "Het product is succesvol toegevoegd!";
     echo '<a href=?adminProducts title="Terug naar de beheerpagina">Terug naar de beheerpagina</a>';
-    updateProduct($_POST['Productnaam'], $_POST['Omschrijving'], $_POST['Categorie'], $_POST['Prijs'],
+    createProduct($_POST['Productnaam'], $_POST['Omschrijving'], $_POST['Categorie'], $_POST['Prijs'],
         $_POST['Voorraad'], $_POST['Inhoud'], $_POST['Afbeelding']);
 }
 ?>

@@ -77,6 +77,8 @@ class Winkelwagen{
                     }
                 }
             } else {
+                $_SESSION['winkelwagen'][0]['productID'] = $productID;
+                $_SESSION['winkelwagen'][0]['aantal'] = $amount;
                 $insertPoint = max(array_keys($_SESSION['winkelwagen'])) + 1;
                 $_SESSION['winkelwagen'][$insertPoint]['productID'] = $productID;
                 $_SESSION['winkelwagen'][$insertPoint]['aantal'] = $amount;

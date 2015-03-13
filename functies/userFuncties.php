@@ -18,7 +18,9 @@ function checkLogin($username, $password){
         header("Refresh:0");
 
     }else{
-        echo "Gebruiker is niet gevonden";
+        echo "Gebruiker is niet gevonden" ?>
+            <br /><a href="?registreren" title="Registreer">Registreer</a>
+<?php
     }
 }
 function checkIfUserIsAdmin(){
@@ -197,5 +199,20 @@ function sendMail($to, $title, $message){
 
     mail($to, $title, $message, $headers);
 }
+
+function deleteUser($username) {
+    global $db;
+    $sql="DELETE FROM GEBRUIKER WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "'";
+    sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
+}
+
+function updateRechten($username, $rechten)
+{
+    global $db;
+    $sql = "UPDATE GEBRUIKER SET [RECHTEN] = '" . addslashes($rechten) . "' WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "'";
+    sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
+}
+
+
 
 ?>
