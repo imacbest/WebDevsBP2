@@ -138,8 +138,7 @@ class Winkelwagen{
     }
 
     /**
-     * functie die checkt of een product wel in voorraad is,
-     * @param $productID
+     * functie die checkt of een product wel in voorraad is, product id moet in $this->productID zitten!
      * @return int voorraad
      */
     public function voldoendeVoorraad(){
