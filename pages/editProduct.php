@@ -13,7 +13,7 @@ if(!empty($_GET['pid'])) {
     <select name="Categorie" value="<?=$product->getCategorie();?>">
         <?php
         $query = "SELECT * FROM CATEGORIE";
-        $result = sqlsrv_query($db->getConn(), $result, null);
+        $result = sqlsrv_query($db->getConn(),$query, array(), array( "Scrollable" => SQLSRV_CURSOR_KEYSET ));
         while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
             echo "<option value='".$row['CATEGORIENAAM']."'>".$row['CATEGORIENAAM']."</option>";
         }

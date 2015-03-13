@@ -6,6 +6,7 @@
  */
 function checkLogin($username, $password){
     global $db;
+    global $page;
     $password = hash('sha256', $password);
     $query = "SELECT * FROM GEBRUIKER WHERE GEBRUIKERSNAAM like '".addslashes($username)."'
      AND WACHTWOORD like '".$password."'";
@@ -15,6 +16,7 @@ function checkLogin($username, $password){
         $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
         $_SESSION['uid'] = $row['userID'];
         header("Refresh:0");
+
     }else{
         echo "Gebruiker is niet gevonden";
     }
