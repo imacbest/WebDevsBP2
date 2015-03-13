@@ -206,4 +206,13 @@ function deleteUser($username) {
     sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
 }
 
+function updateRechten($username, $rechten)
+{
+    global $db;
+    $sql = "UPDATE GEBRUIKER SET [RECHTEN] = '" . addslashes($rechten) . "' WHERE [GEBRUIKERSNAAM] = '" . addslashes($username) . "'";
+    sqlsrv_query($db->getConn(), $sql, NULL) or die (print_r(sqlsrv_errors()));
+}
+
+
+
 ?>

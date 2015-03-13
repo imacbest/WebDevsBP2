@@ -30,7 +30,7 @@ Beroepsproduct 2
     <!-- header -->
     <div id="header">
         <!-- logo -->
-        <a href="?nieuws" title="Home">
+        <a href="index.php" title="Home">
             <div id="logo">
             </div>
         </a>
