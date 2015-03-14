@@ -75,7 +75,7 @@ if($cart->isCartEmpty()){
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>Totaal prijs: &euro; <?=$totalPrice;?></td>
-                <td>&nbsp;</td>
+                <td><a href="?afrekenen" title="Afrekenen">Afrekenen</a></td>
 
             </tr>
         <?php
