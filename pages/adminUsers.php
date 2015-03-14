@@ -33,7 +33,7 @@ while( $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC)){
     if($rechten == 2) {
         echo "<b>Admin</b>";
     }
-    echo "  <a href='?product&pid=".$row['userID']."' title='".$row['GEBRUIKERSNAAM']."'></a>
+    echo "  <a href='?product&amp;pid=".$row['userID']."' title='".$row['GEBRUIKERSNAAM']."'></a>
                         <br />Naam: ".$row['VOORNAAM']." ".$row['TUSSENVOEGSEL']." ".$row['ACHTERNAAM'].
                         "<br />Gebruiksernaam: ".$row['GEBRUIKERSNAAM']."<br />Email: ".$row['EMAIL']."<br /><br />"?>
         <form name="deleteAccount" method="post">

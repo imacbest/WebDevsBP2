@@ -56,9 +56,9 @@ echo $msg;
 
 if($countError == 1) {
     echo "<br ?>Er is ".$countError." fout gevonden!<br />";
-    echo '<a href=?addProduct&Productnaam=.$_POST['Productnaam'].& title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
+    echo '<a href=?addProduct&amp;Productnaam='.$_POST["Productnaam"].'& title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
 }else if($countError != 0) {
-    echo "<br ?>Er zijn in totaal " . $countError . " fouten gevonden!<br />";
+    echo "<br />Er zijn in totaal " . $countError . " fouten gevonden!<br />";
     echo '<a href=?addProduct title="Terug naar de vorige pagina">Terug naar de vorige pagina</a>';
 }else if($countError == 0) {
     echo "Het product is succesvol toegevoegd!";

@@ -3,7 +3,6 @@ include("classes/Product.class.php");
 if(isset($_GET['pAdd'])){
     if(!empty($_GET['pAdd'])){
         $cart->addToCart($_GET['pAdd'], 1);
-        echo "Product is toegevoegd aan je winkelwagentje!";
     }
 }
 if(!isset($_GET['pid'])){
@@ -14,7 +13,6 @@ if(!isset($_GET['pid'])){
             if(!empty($_POST['aantal'])){
                 if(is_numeric($_POST['aantal'])) {
                     $cart->addToCart($_GET['pid'], $_POST['aantal']);
-                    echo "Product is toegevoegd aan je winkelwagentje!";
                 }
             }
         }
@@ -43,23 +41,22 @@ if(!isset($_GET['pid'])){
                 <form method="post" action="?product&amp;pid=<?=$_GET['pid'];?>">
                 Aantal <input type="number" name="aantal" min="0" value="1" /> <input type="submit" value="Toevoegen" name="toevoegen" />
                 </form>
-            </p>
+
 
         </div>
         <div class="clear"></div>
         <br />
         <h2>Suggesties</h2>
-        <table class="productenTabel">
-            <tr>
+
             <?php
             for($i = 0; $i < sizeof($product->getGerelateerdeProductenID()); $i++){
                 $gerelateerdProduct = new Product($product->getGerelateerdeProductenID()[$i]);
                 echo "<div class=\"product\">";
-                echo "  <a href='?product&pid=".$gerelateerdProduct->getProductNummer()."' title='".$gerelateerdProduct->getProductNaam()."'>
+                echo "  <a href='?product&amp;pid=".$gerelateerdProduct->getProductNummer()."' title='".$gerelateerdProduct->getProductNaam()."'>
                             <img height=\"150\" src='media/producten/".$gerelateerdProduct->getImg()."' alt=
                             '".$gerelateerdProduct->getProductNaam()."' /></a>
                         <br />".$gerelateerdProduct->getProductNaam()."<br />&euro;".$gerelateerdProduct->getPrijs()."<br />
-                        <a href='?product&amp;pid=".$_GET['pid']."&pAdd=".$gerelateerdProduct->getProductNummer()."' title='Voeg ".$gerelateerdProduct->getProductNaam()." toe aan het winkelwagentje!'>In Winkelwagen</a>";
+                        <a href='?product&amp;pid=".$_GET['pid']."&amp;pAdd=".$gerelateerdProduct->getProductNummer()."' title='Voeg ".$gerelateerdProduct->getProductNaam()." toe aan het winkelwagentje!'>In Winkelwagen</a>";
                 echo "</div>&nbsp;";
                 ?>
 
@@ -69,9 +66,7 @@ if(!isset($_GET['pid'])){
                 <?php
             }
             ?>
-            </tr>
 
-        </table>
         <br /><br />
 
 

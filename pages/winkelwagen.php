@@ -9,7 +9,6 @@ if(isset($_GET['removeID'])){
 if(isset($_GET['pAdd'])){
     if(!empty($_GET['pAdd'])){
         $cart->addToCart($_GET['pAdd'], 1);
-        echo "Het te bestellen aantal is met 1 opgehoogd (+1)";
     }
 }
 if(isset($_GET['pRemove'])){
@@ -69,8 +68,18 @@ if($cart->isCartEmpty()){
                     $totalPrice += $product->getPrijs() * $_SESSION['winkelwagen'][$i]['aantal'];
                 }
             }
+            ?>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Totaal prijs: &euro; <?=$totalPrice;?></td>
+                <td>&nbsp;</td>
+
+            </tr>
+        <?php
             echo "</table> ";
-            echo "Totaal prijs: &euro;" . $totalPrice;
 
         } else {
             echo "Geen items gevonden";

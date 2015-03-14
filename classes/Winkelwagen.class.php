@@ -61,12 +61,30 @@ class Winkelwagen{
             return false;
         }
         $inCart = 0;
-        if ($this->checkIfProductInCart($this->productID)) {
-            $inCart = $_SESSION['winkelwagen'][$this->getI($productID)]['aantal'];
+        $currentInCart = 0;
+        if(array_key_exists('winkelwagen', $_SESSION)) {
+            if ($this->checkIfProductInCart($this->productID)) {
+                $inCart = $_SESSION['winkelwagen'][$this->getI($productID)]['aantal'];
+                if(is_numeric($this->getI($this->productID))) {
+                    $currentInCart = $_SESSION['winkelwagen'][$this->getI($productID)]['aantal'];
+                }else{
+                    $currentInCart = 0;
+                }
+            }
+        }else{
+            $currentInCart = 0;
         }
-        if ($amount + $inCart > $this->voldoendeVoorraad()) {
-            $amount = $amount + $this->voldoendeVoorraad() - $_SESSION['winkelwagen'][$this->getI($productID)]['aantal'];
-        }
+
+       if($inCart + $amount == $this->getVoorraad()) {
+            $amount = 1;
+           echo "Het te bestellen aantal is met 1 opgehoogd (+1)";
+        }else if((($inCart + $amount) - $currentInCart) >= $this->getVoorraad()){
+            $amount = $this->getVoorraad() - $currentInCart;
+           echo "Het te bestellen aantal is opgehoogd!";
+        } else if($inCart + $amount > $this->getVoorraad()) {
+           $amount = 0;
+           echo "Er is geen voldoende voorraad!";
+       }
 
         if (array_key_exists('winkelwagen', $_SESSION)) {
             if ($this->checkIfProductInCart($productID)) {
@@ -77,8 +95,8 @@ class Winkelwagen{
                     }
                 }
             } else {
-                $_SESSION['winkelwagen'][0]['productID'] = $productID;
-                $_SESSION['winkelwagen'][0]['aantal'] = $amount;
+//                $_SESSION['winkelwagen'][0]['productID'] = $productID;
+//                $_SESSION['winkelwagen'][0]['aantal'] = $amount;
                 $insertPoint = max(array_keys($_SESSION['winkelwagen'])) + 1;
                 $_SESSION['winkelwagen'][$insertPoint]['productID'] = $productID;
                 $_SESSION['winkelwagen'][$insertPoint]['aantal'] = $amount;
@@ -120,6 +138,7 @@ class Winkelwagen{
                 }
             }
         }
+        return false;
     }
 
     /**
@@ -143,7 +162,7 @@ class Winkelwagen{
      * functie die checkt of een product wel in voorraad is, product id moet in $this->productID zitten!
      * @return int voorraad
      */
-    public function voldoendeVoorraad(){
+    public function getVoorraad(){
         global $db;
         $query = "SELECT * FROM PRODUCT WHERE productnummer = '" . $this->productID . "'";
         $result = sqlsrv_query($db->getConn(), $query, null) or die(print_r(sqlsrv_errors()));

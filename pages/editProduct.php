@@ -86,7 +86,7 @@ if(!empty($_GET['pid'])) {
         Omschrijving: (langer dan 10 karakters)* <br/><textarea name="Omschrijving" rows="8" cols="75"
                                        placeholder="Omschrijving"><?= $product->getOmschrijving(); ?></textarea><br/>
         Categorie: *
-        <select name="Categorie" value="<?= $product->getCategorie(); ?>">
+        <select name="Categorie">
             <?php
             $query = "SELECT * FROM CATEGORIE";
             $result = sqlsrv_query($db->getConn(), $query, array(), array("Scrollable" => SQLSRV_CURSOR_KEYSET));
