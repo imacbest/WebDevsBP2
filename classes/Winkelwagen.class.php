@@ -40,7 +40,6 @@ class Winkelwagen{
         if(array_key_exists('winkelwagen', $_SESSION)) {
             for ($i = 0; $i < count($_SESSION['winkelwagen']); $i++) {
                 $amount = $_SESSION['winkelwagen'][$i]['productID'];
-                echo $amount;
                 if ($_SESSION['winkelwagen'][$i]['productID'] == $productID) {
                     $_SESSION['winkelwagen'][$i]['aantal'] = 0;
                 }
@@ -159,11 +158,12 @@ class Winkelwagen{
         }
     }
 
+
     /**
      * functie die checkt of een product wel in voorraad is, product id moet in $this->productID zitten!
      * @return int voorraad
      */
-    public function getVoorraad(){
+    function getVoorraad(){
         global $db;
         $query = "SELECT * FROM PRODUCT WHERE productnummer = '" . $this->productID . "'";
         $result = sqlsrv_query($db->getConn(), $query, null) or die(print_r(sqlsrv_errors()));
@@ -171,8 +171,6 @@ class Winkelwagen{
             $row = sqlsrv_fetch_array( $result, SQLSRV_FETCH_ASSOC);
             return $row['VOORRAAD'];
         }
-        return false;
     }
-
 
 }

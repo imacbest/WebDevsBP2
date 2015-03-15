@@ -21,7 +21,6 @@ if(isset($_GET['pRemove'])){
 
 require("classes/Product.class.php");
 
-
 ?>
 <h1>Winkelwagen</h1>
 
