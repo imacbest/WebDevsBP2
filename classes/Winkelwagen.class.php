@@ -50,6 +50,7 @@ class Winkelwagen{
 
     /**
      * Voegt x aantal van het product toe aan de winkelwagen
+     * Controleert hierbij of er wel genoeg producten in voorraad zijn.
      * @param $productID het product id
      * @param $amount het aantal toe te voegen producten
      * @return bool
@@ -57,7 +58,7 @@ class Winkelwagen{
     public function addToCart($productID, $amount)
     {
         $this->productID = $productID;
-        if (!is_numeric($productID) && !is_numeric($productID)) {
+        if (!is_numeric($productID)) { // check of het product id wel een nummer is
             return false;
         }
         $inCart = 0;
