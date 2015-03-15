@@ -84,6 +84,8 @@ class Winkelwagen{
         } else if($inCart + $amount > $this->getVoorraad()) {
            $amount = 0;
            echo "Er is geen voldoende voorraad!";
+       }else{
+           echo "Het product is aan je winkelwagen toegevoegd!";
        }
 
         if (array_key_exists('winkelwagen', $_SESSION)) {
