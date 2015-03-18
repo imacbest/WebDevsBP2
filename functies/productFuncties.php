@@ -65,7 +65,6 @@ function removeProductVoorraad($productID, $amount){
     $query = "UPDATE PRODUCT SET VOORRAAD = '".$nieuweVoorraad."' WHERE PRODUCTNUMMER = ". $productID;
     sqlsrv_query($db->getConn(), $query, NULL) or die (print_r(sqlsrv_errors()));
     $cart->removeAllFromCart($productID);
-    echo "Producten zijn van de voorraad afgehaald!";
 }
 
 

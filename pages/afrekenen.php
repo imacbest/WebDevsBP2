@@ -15,6 +15,7 @@ if (array_key_exists('winkelwagen', $_SESSION)) {
                 removeProductVoorraad($_SESSION['winkelwagen'][$i]['productID'], $_SESSION['winkelwagen'][$i]['aantal']);
             }
         }
+        echo "Producten zijn van de voorraad afgehaald!<br />";
     }
 }
 ?>
