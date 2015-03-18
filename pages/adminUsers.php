@@ -21,7 +21,7 @@ if(!empty($_POST['username'])) {
 
 <div id="gebruiksers">
 <?php
-if(checkIfUserIsAdmin()){
+if(checkIfUserIsAdmin()){ // Checkt of de user wel admin is en dus rechten magwijzigen
 
     $tsql = "SELECT * FROM GEBRUIKER ";
     $result = sqlsrv_query($db->getConn(), $tsql) or die(print_r(sqlsrv_errors()));

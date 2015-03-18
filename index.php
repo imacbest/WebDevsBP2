@@ -37,8 +37,8 @@ Beroepsproduct 2
         <!-- end logo -->
         <!-- login -->
         <div id="login">
-            <?php
-            include("pages/loginForm.php");
+            <?php // include van het inlogform
+            require("pages/loginForm.php");
             ?>
         </div>
         <!-- end login -->
@@ -50,15 +50,15 @@ Beroepsproduct 2
 
     <!-- start nav -->
     <div id="nav">
-        <?php
-        include("pages/menu.php");
+        <?php // ophalen van het menu
+        require("pages/menu.php");
         ?>
     </div>
     <!-- end nav -->
     <div id="content">
         <div id="pageContent">
-            <?php
-            include($page->getPage());
+            <?php // ophalen van de huidige pagina
+            require($page->getPage());
             ?>
 
         </div>

@@ -22,7 +22,7 @@
     Puschkin Red Orange (17,7%) combineert de kracht van Puschkin wodka met de
     heerlijke bitterzoete smaak van rode bloedsinaasappelen. Deze kenmerkende smaak
     maakt Red Orange ongekend populair, Puschkin Red Orange is niet voor niets al jarenlang
-    Nederland’s nummer 1 rode wodka. Puschkin Red Orange is heerlijk in de mix.
+    Nederland's nummer 1 rode wodka. Puschkin Red Orange is heerlijk in de mix.
     <br /><br />
     <a href="?product&amp;pid=35">Ga naar Puschkin Red in de Webshop</a>
 </p>
