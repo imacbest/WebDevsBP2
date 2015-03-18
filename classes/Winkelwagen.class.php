@@ -78,13 +78,13 @@ class Winkelwagen{
        if($inCart + $amount == $this->getVoorraad()) {
             $amount = 1;
            echo "Het te bestellen aantal is met 1 opgehoogd (+1)<br />";
-        }else if((($inCart + $amount) - $currentInCart) >= $this->getVoorraad()){
-            $amount = $this->getVoorraad() - $currentInCart;
-           echo "Het te bestellen aantal is opgehoogd!<br />";
-        } else if($inCart + $amount > $this->getVoorraad()) {
+        }else if($inCart + $amount > $this->getVoorraad()) {
            $amount = 0;
            echo "Er is geen voldoende voorraad!<br />";
-       } else {
+       } else if((($inCart + $amount) - $currentInCart) >= $this->getVoorraad()) {
+           $amount = $this->getVoorraad() - $currentInCart;
+           echo "Het te bestellen aantal is opgehoogd!<br />";
+       }  else {
            echo "Het product is aan het winkelwagentje toegevoegd!<br />";
        }
 
