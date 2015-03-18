@@ -3,7 +3,7 @@
 if(isset($_GET['pAdd'])){
     if(!empty($_GET['pAdd'])){
         $cart->addToCart($_GET['pAdd'], 1);
-        echo "Product is toegevoegd aan je winkelwagentje!";
+        //echo "Product is toegevoegd aan je winkelwagentje!";
     }
 }
 
